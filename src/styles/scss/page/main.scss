@@ -1,3 +1,8 @@
 @use '../basic/normalize' as *;
 @use '../basic/basic' as *;
 @use '../abstracts/' as *;
+
+@use '../components/Navigation';
+@use '../components/Slider';
+@use '../components/MealTypes';
+@use '../components/Category';

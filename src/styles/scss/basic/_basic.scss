@@ -1,0 +1,47 @@
+@use '../abstracts/' as *;
+:root {
+  font-family: $font-primary;
+  color: $clr-light-100;
+}
+
+#root {
+  padding: 1rem 2rem;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $clr-dark-100;
+}
+
+// LINKS
+
+a {
+  color: $clr-light-100;
+  text-decoration: none;
+}
+
+// LISTS
+
+ol,
+ul {
+  list-style: none;
+}
+
+// CONTAINERS
+
+.container {
+  max-width: 100%;
+}
+
+.footer {
+  margin: 2rem 10rem;
+  padding: 2rem;
+  border-top: 1px solid $clr-light-200;
+}

@@ -1,0 +1,19 @@
+@use '../abstracts/' as *;
+
+.slider {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.slider__photo {
+  width: 100%;
+  max-height: 80vh;
+}
+
+.slider__description {
+  text-align: center;
+  @include center;
+  background: rgba($clr-additional-200, 0.8);
+  padding: 1em;
+  box-shadow: 1px 1px 12px $clr-dark-200;
+}
