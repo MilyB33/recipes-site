@@ -524,8 +524,27 @@ ul {
   flex-direction: column;
 }
 
+.browse__results {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  min-height: 50vh;
+}
+
 .button--browse {
   margin-top: 1rem;
+}
+
+.recipe {
+  text-align: center;
+  max-width: 19.5rem;
+  height: 20rem;
+}
+.recipe__title {
+  padding: 1rem;
+  background: rgba(227, 100, 20, 0.5);
 }
 
 /*# sourceMappingURL=main.css.map */

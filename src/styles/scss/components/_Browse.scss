@@ -13,6 +13,26 @@
   }
 }
 
+.browse__results {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  min-height: 50vh;
+}
+
 .button--browse {
   margin-top: 1rem;
+}
+
+.recipe {
+  text-align: center;
+  max-width: 19.5rem;
+  height: 20rem;
+
+  &__title {
+    padding: 1rem;
+    background: rgba($clr-additional-200, 0.5);
+  }
 }
