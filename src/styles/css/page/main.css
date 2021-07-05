@@ -369,6 +369,15 @@ ul {
   list-style: none;
 }
 
+.button {
+  color: #f8f9fa;
+  background: #e36414;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px black;
+}
+
 .container {
   max-width: 100%;
 }
@@ -381,8 +390,14 @@ ul {
 
 .navigation {
   display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
   gap: 5em;
   align-items: center;
+  z-index: 9999;
+  background: #353535;
+  padding: 0.5rem 0;
 }
 .navigation__list {
   display: inherit;
@@ -495,6 +510,22 @@ ul {
 }
 .categories__item {
   margin: 0 1rem;
+}
+
+.browse-form {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+.browse-form__box {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.button--browse {
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

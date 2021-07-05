@@ -1,4 +1,5 @@
 export const cuisines = [
+  'any',
   'African',
   'American',
   'British',
@@ -25,4 +26,52 @@ export const cuisines = [
   'Spanish',
   'Thai',
   'Vietnamese',
+];
+
+export const mealTypes = [
+  'any',
+  'main course',
+  'side dish',
+  'dessert',
+  'appetizer',
+  'salad',
+  'bread',
+  'breakfast',
+  'soup',
+  'beverage',
+  'sauce',
+  'marinade',
+  'fingerfood',
+  'snack',
+  'drink',
+];
+
+export const diets = [
+  'any',
+  'Gluten Free',
+  'Ketogenic',
+  'Vegetarian',
+  'Lacto-Vegetarian',
+  'Ovo-Vegetarian',
+  'Vegan',
+  'Pescetarian',
+  'Paleo',
+  'Primal',
+  'Whole30',
+];
+
+export const intolerances = [
+  'any',
+  'Dairy',
+  'Egg',
+  'Gluten',
+  'Grain',
+  'Peanut',
+  'Seafood',
+  'Sesame',
+  'Shellfish',
+  'Soy',
+  'Sulfite',
+  'Tree Nut',
+  'Wheat',
 ];

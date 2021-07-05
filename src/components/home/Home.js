@@ -6,7 +6,7 @@ import Category from './categories/Category';
 const Home = () => {
   return (
     <main className="container container--home">
-      <Slider />
+      <Slider text="Welcome to our Recipes Site" />
       <Meals />
       <Category />
     </main>

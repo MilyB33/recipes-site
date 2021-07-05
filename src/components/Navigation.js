@@ -1,42 +1,43 @@
-import React, { Link } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   return (
     <nav className="navigation">
-      <a href="" className="logo__link">
+      <Link to="/" className="logo__link">
         <img
           src="./static/food-serving.png"
           alt="Site logo"
           className="logo"
         />
-      </a>
+      </Link>
 
       <ul className="navigation__list">
         <li className="navigation__item">
-          <a href="" className="link navigation__link">
+          <Link to="/" className="link navigation__link">
             HOME
-          </a>
+          </Link>
         </li>
         <li className="navigation__item">
-          <a href="" className="link navigation__link">
+          <Link to="/browse" className="link navigation__link">
             BROWSE
-          </a>
+          </Link>
         </li>
         <li className="navigation__item">
-          <a href="" className="link navigation__link">
+          <Link to="/logIn" className="link navigation__link">
             LOG IN
-          </a>
+          </Link>
         </li>
         <li className="navigation__item">
-          <a href="" className="link navigation__link">
+          <Link to="/register" className="link navigation__link">
             REGISTER
-          </a>
+          </Link>
         </li>
 
         <li className="navigation__item">
-          <a href="" className="link navigation__link">
+          <Link to="/contact" className="link navigation__link">
             CONTACTS
-          </a>
+          </Link>
         </li>
       </ul>
 

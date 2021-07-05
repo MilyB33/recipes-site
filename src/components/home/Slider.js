@@ -1,7 +1,7 @@
 import React from 'react';
-import sliderPhoto from '../static/slider-temp.jpg';
+import sliderPhoto from '../../static/slider-temp.jpg';
 
-const Slider = () => {
+const Slider = ({ text }) => {
   return (
     <section className="slider">
       <img
@@ -9,9 +9,7 @@ const Slider = () => {
         alt="slider Photo"
         className="slider__photo"
       />
-      <h1 className="slider__description">
-        Welcome to our Recipes Site
-      </h1>
+      <h1 className="slider__description">{text}</h1>
     </section>
   );
 };

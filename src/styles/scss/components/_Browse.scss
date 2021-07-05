@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+.browse-form {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+
+  &__box {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+}
+
+.button--browse {
+  margin-top: 1rem;
+}
