@@ -1,0 +1,76 @@
+@use '../abstracts/' as *;
+
+.contact {
+  padding: 0 25rem;
+  margin-bottom: 2rem;
+
+  &__description {
+    margin-top: 1rem;
+  }
+
+  &__info {
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+
+    &__item {
+      display: inherit;
+      gap: 1rem;
+      align-items: center;
+
+      & > i {
+        color: $clr-additional-200;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &__grid {
+      margin-top: 1rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(4, 1fr);
+    }
+  }
+
+  &__message {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    resize: none;
+  }
+
+  &__input {
+    padding: 1rem;
+    background: none;
+    border: 1px solid $clr-light-200;
+    color: $clr-light-100;
+
+    &::placeholder {
+      color: $clr-light-100;
+    }
+  }
+}
+
+.button--contact {
+  background: none;
+  box-shadow: none;
+  grid-column: 2/3;
+  grid-row: 4/5;
+  color: $clr-additional-200;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.map {
+  width: 100%;
+  min-height: 30vh;
+  background: grey;
+}

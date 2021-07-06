@@ -7,10 +7,14 @@ const Results = () => {
 
   useEffect(async () => {
     console.log(process.env);
-    const response = await getRecipes.get(
-      `?apiKey=${process.env.REACT_APP_SPOON_KEY}&number=20`
-    );
-    setRecipes(response.data.results);
+    if (recipes.length === 0) {
+      // Temporary to not overload api
+      const response = await getRecipes.get(
+        `?apiKey=${process.env.REACT_APP_SPOON_KEY}&number=20`
+      );
+      setRecipes(response.data.results);
+    }
+
     // eslint-disable-next-line
   }, []);
 

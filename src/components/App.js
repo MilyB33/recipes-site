@@ -9,10 +9,11 @@ import Navigation from './Navigation';
 import Home from './home/Home';
 import Footer from './Footer';
 import Browse from './browse/Browse';
+import Contact from './contact/Contact';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Router>
         <Navigation />
         <Switch>
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route exact path="/browse">
             <Browse />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
           </Route>
         </Switch>
         <Footer />
