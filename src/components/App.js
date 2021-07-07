@@ -20,9 +20,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/browse">
-            <Browse />
-          </Route>
+          <Route
+            exact
+            path="/browse/:type"
+            component={Browse}
+          ></Route>
           <Route exact path="/contact">
             <Contact />
           </Route>

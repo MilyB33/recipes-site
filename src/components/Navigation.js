@@ -19,7 +19,10 @@ const Navigation = () => {
           </Link>
         </li>
         <li className="navigation__item">
-          <Link to="/browse" className="link navigation__link">
+          <Link
+            to="/browse/default"
+            className="link navigation__link"
+          >
             BROWSE
           </Link>
         </li>

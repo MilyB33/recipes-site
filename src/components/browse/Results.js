@@ -1,30 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import getRecipes from '../../api/spoon';
+import React from 'react';
+import { connect } from 'react-redux';
+import { fetchRecipes } from '../../actions';
 import Recipe from './Recipe';
 
-const Results = () => {
-  const [recipes, setRecipes] = useState([]);
-
-  useEffect(async () => {
-    console.log(process.env);
-    if (recipes.length === 0) {
-      // Temporary to not overload api
-      const response = await getRecipes.get(
-        `?apiKey=${process.env.REACT_APP_SPOON_KEY}&number=20`
-      );
-      setRecipes(response.data.results);
+class Results extends React.Component {
+  componentDidMount() {
+    if (this.props.recipes.length === 0) {
+      // Temporary to avoid to many request to api
+      this.props.fetchRecipes();
     }
+  }
 
-    // eslint-disable-next-line
-  }, []);
-
-  const renderRecipes = () => {
-    return recipes.map((recipe) => {
+  renderRecipes = () => {
+    return this.props.recipes.map((recipe) => {
       return <Recipe key={recipe.id} recipe={recipe} />;
     });
   };
 
-  return <div className="browse__results">{renderRecipes()}</div>;
+  render() {
+    return (
+      <div className="browse__results">{this.renderRecipes()}</div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return { recipes: state.recipes.recipes };
 };
 
-export default Results;
+export default connect(mapStateToProps, { fetchRecipes })(Results);

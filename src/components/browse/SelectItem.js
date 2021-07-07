@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const SelectItem = ({ text, data, className }) => {
+const SelectItem = ({
+  text,
+  data,
+  className,
+  defaultValue,
+  id,
+  onChange,
+}) => {
+  const [inputValue, setInputValue] = useState(defaultValue);
+
   const renderOptions = () => {
     return data.map((item) => {
       return (
@@ -13,10 +22,16 @@ const SelectItem = ({ text, data, className }) => {
 
   return (
     <div className={`browse-form__box ${className ?? ''}`}>
-      <label htmlFor={text}>
+      <label htmlFor={id}>
         {`${text.charAt(0).toUpperCase()}${text.slice(1)}`}
       </label>
-      <select id={text}>{renderOptions()}</select>
+      <select
+        id={id}
+        value={defaultValue}
+        onChange={(e) => onChange(id, e.target.value)}
+      >
+        {renderOptions()}
+      </select>
     </div>
   );
 };
