@@ -630,7 +630,7 @@ ul {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto-fill, minmax(0, 45vh));
+  grid-template-rows: repeat(auto-fill, minmax(0, 50vh));
 }
 .recipe__tags {
   text-align: center;
@@ -647,30 +647,54 @@ ul {
   padding: 1rem;
   background: rgba(239, 35, 60, 0.2);
   border-radius: 15px;
+  transition: 0.5s;
+}
+.recipe__tags__list__item:hover {
+  background: rgba(233, 236, 239, 0.2);
 }
 .recipe__title {
   text-align: center;
 }
-.recipe__ingredients {
-  width: 100%;
-  text-align: left;
+.recipe__box {
   display: grid;
   gap: 1rem;
-  max-height: 37vh;
-  overflow-y: auto;
 }
-.recipe__ingredients__row {
+.recipe__info, .recipe__ingredients {
+  width: 100%;
+  text-align: left;
+  text-indent: 1rem;
+}
+.recipe__ingredients {
+  overflow-y: auto;
+  grid-row: 1/span 2;
+  grid-column: 2/3;
+}
+.recipe__row {
   display: flex;
   border-bottom: 2px solid #e36414;
 }
-.recipe__ingredients__column {
+.recipe__column {
   display: grid;
   align-content: center;
   width: 100%;
   min-height: 2rem;
 }
-.recipe__ingredients__caption {
+.recipe__caption {
   text-align: left;
+}
+.recipe__instruction {
+  height: 100%;
+  line-height: 150%;
+}
+
+.container--recipe {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #212529;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 4px 4px 8px #ef233c;
 }
 
 /*# sourceMappingURL=main.css.map */

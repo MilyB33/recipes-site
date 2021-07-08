@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { fetchRecipeInformation } from '../../actions';
 import Ingredients from './Ingredients';
 import Tags from './Tags';
+import Info from './Info';
+import Instructions from './Instructions';
+import Header from './Header';
 
 class RecipeInfo extends Component {
   componentDidMount() {
@@ -25,13 +28,12 @@ class RecipeInfo extends Component {
           dishTypes={recipeInfo.dishTypes}
           cuisines={recipeInfo.cuisines}
         />
-        <header className="recipe__header">
-          <img src={recipeInfo.image} alt="recipe" />
-          <h1 className="recipe__title">{recipeInfo.title}</h1>
-        </header>
-        <div className="recipe__ingredients">
-          <Ingredients ingredients={recipeInfo.extendedIngredients} />
-        </div>
+
+        <Header recipe={recipeInfo} />
+
+        <Ingredients ingredients={recipeInfo.extendedIngredients} />
+        <Info recipe={recipeInfo} />
+        <Instructions instructions={recipeInfo.instructions} />
       </div>
     );
   }
