@@ -1,0 +1,57 @@
+@use '../abstracts/' as *;
+
+.recipe {
+  padding: 5rem 10rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, minmax(0, 45vh));
+
+  &__tags {
+    text-align: center;
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+
+      &__item {
+        font-size: 0.8em;
+        padding: 1rem;
+        background: rgba($clr-additional-100, 0.2);
+        border-radius: 15px;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__ingredients {
+    width: 100%;
+    text-align: left;
+    display: grid;
+    gap: 1rem;
+    max-height: 37vh;
+    overflow-y: auto;
+
+    &__row {
+      display: flex;
+      border-bottom: 2px solid $clr-additional-200;
+    }
+
+    &__column {
+      display: grid;
+      align-content: center;
+      width: 100%;
+      min-height: 2rem;
+    }
+
+    &__caption {
+      text-align: left;
+    }
+  }
+}

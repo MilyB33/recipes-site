@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import { fetchRecipeInformation } from '../../actions';
+import Ingredients from './Ingredients';
+import Tags from './Tags';
 
 class RecipeInfo extends Component {
   componentDidMount() {
@@ -14,8 +16,24 @@ class RecipeInfo extends Component {
   }
 
   render() {
-    const id = this.props.match.params.id;
-    return <div>RecipeInfo {id}</div>;
+    const recipeInfo = this.props.recipeInfo;
+
+    return (
+      <div className="recipe">
+        <Tags
+          diets={recipeInfo.diets}
+          dishTypes={recipeInfo.dishTypes}
+          cuisines={recipeInfo.cuisines}
+        />
+        <header className="recipe__header">
+          <img src={recipeInfo.image} alt="recipe" />
+          <h1 className="recipe__title">{recipeInfo.title}</h1>
+        </header>
+        <div className="recipe__ingredients">
+          <Ingredients ingredients={recipeInfo.extendedIngredients} />
+        </div>
+      </div>
+    );
   }
 }
 

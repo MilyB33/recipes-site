@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Recipe = ({ recipe }) => {
   return (
-    <div className="recipe">
+    <div className="recipe__card">
       <Link to={`/recipe/${recipe.id}`}>
         <img
           src={recipe.image}
