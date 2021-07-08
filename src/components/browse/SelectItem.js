@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const SelectItem = ({
   text,
@@ -8,8 +8,6 @@ const SelectItem = ({
   id,
   onChange,
 }) => {
-  const [inputValue, setInputValue] = useState(defaultValue);
-
   const renderOptions = () => {
     return data.map((item) => {
       return (

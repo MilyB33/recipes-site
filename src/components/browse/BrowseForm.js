@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchRecipes } from '../../actions';
 import SelectItem from './SelectItem';
 import {
   cuisines,
@@ -10,33 +12,42 @@ import {
 class BrowseForm extends React.Component {
   state = {
     keyword: '',
-    cuisine: 'any',
-    mealType: 'any',
-    diet: 'any',
-    intolerances: 'any',
+    cuisine: '',
+    mealType: '',
+    diet: '',
+    intolerances: '',
   };
 
   componentDidMount() {
     const param = this.props.param;
-    console.log(param);
+
     if (mealTypes.includes(param)) {
       this.setState({ mealType: param });
-      return;
     }
 
     if (cuisines.includes(param)) {
       this.setState({ cuisine: param });
-      return;
+    }
+  }
+
+  componentDidUpdate() {
+    console.log(this.state);
+  }
+
+  getRecipes() {
+    if (this.props.recipes.length === 0) {
+      this.props.fetchRecipes(this.state);
     }
   }
 
   onInputChange = (field, value) => {
     console.log(field, value);
-    this.setState({ [field]: value });
+    this.setState({ [field]: value === 'any' ? '' : value });
   };
 
   onSubmit = (e) => {
     e.preventDefault();
+    this.props.fetchRecipes(this.state);
   };
 
   render() {
@@ -92,4 +103,8 @@ class BrowseForm extends React.Component {
   }
 }
 
-export default BrowseForm;
+const mapStateToProps = (state) => {
+  return { recipes: state.recipes.recipes };
+};
+
+export default connect(mapStateToProps, { fetchRecipes })(BrowseForm);

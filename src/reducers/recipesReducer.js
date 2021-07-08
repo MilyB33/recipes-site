@@ -1,7 +1,8 @@
-import { FETCH_RECIPES } from '../actions/types';
+import { FETCH_RECIPE, FETCH_RECIPES } from '../actions/types';
 
 const INITIAL_STATE = {
   recipes: [],
+  recipeInfo: {},
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -10,6 +11,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         recipes: action.payload,
+      };
+    case FETCH_RECIPE:
+      return {
+        ...state,
+        recipeInfo: action.payload,
       };
     default:
       return state;
