@@ -85,7 +85,8 @@
   }
 
   &__image {
-    box-shadow: 4px 4px 8px black, 4px 4px 8px white;
+    border-radius: 15px;
+    box-shadow: 4px 4px 16px black, 0px 0px 1px 12px white;
   }
 }
 

@@ -11,6 +11,7 @@ import Footer from './Footer';
 import Browse from './browse/Browse';
 import Contact from './contact/Contact';
 import RecipeInfo from './recipe/RecipeInfo';
+import AccountAccess from './account/AccountAcces';
 
 function App() {
   return (
@@ -23,9 +24,8 @@ function App() {
           </Route>
           <Route exact path="/browse/:type" component={Browse} />
           <Route exact path="/recipe/:id" component={RecipeInfo} />
-          <Route exact path="/contact">
-            <Contact />
-          </Route>
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/logIn" component={AccountAccess} />
         </Switch>
         <Footer />
       </Router>

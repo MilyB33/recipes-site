@@ -27,19 +27,13 @@ const Navigation = () => {
           </Link>
         </li>
         <li className="navigation__item">
-          <Link to="/logIn" className="link navigation__link">
-            LOG IN
-          </Link>
-        </li>
-        <li className="navigation__item">
-          <Link to="/register" className="link navigation__link">
-            REGISTER
-          </Link>
-        </li>
-
-        <li className="navigation__item">
           <Link to="/contact" className="link navigation__link">
             CONTACTS
+          </Link>
+        </li>
+        <li className="navigation__item">
+          <Link to="/logIn" className="link navigation__link">
+            LOG IN / REGISTER
           </Link>
         </li>
       </ul>

@@ -1,0 +1,39 @@
+@use '../abstracts/' as *;
+
+.account {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 10em;
+  min-height: 75vh;
+
+  &__form {
+    display: grid;
+    gap: 1em;
+    background: $clr-light-100;
+    padding: 2em 4em;
+    color: $clr-dark-200;
+    box-shadow: 4px 4px 8px $clr-additional-100;
+    border: 1px solid $clr-dark-200;
+    border-radius: 10px;
+
+    & > input:not(input[type='submit']) {
+      padding: 1.5ch;
+      border-radius: inherit;
+      border: inherit;
+      background: inherit;
+      box-shadow: 4px 4px 4px $clr-additional-200;
+    }
+  }
+}
+
+.button--link {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

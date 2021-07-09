@@ -389,6 +389,10 @@ ul {
   background: rgba(227, 100, 20, 0.8);
 }
 
+input {
+  border: none;
+}
+
 .container {
   max-width: 100%;
 }
@@ -701,7 +705,8 @@ ul {
   margin: 1rem 0;
 }
 .recipe__image {
-  box-shadow: 4px 4px 8px black, 4px 4px 8px white;
+  border-radius: 15px;
+  box-shadow: 4px 4px 16px black, 0px 0px 1px 12px white;
 }
 
 .container--recipe {
@@ -712,6 +717,41 @@ ul {
   border-radius: 15px;
   padding: 1rem;
   box-shadow: 4px 4px 8px #ef233c;
+}
+
+.account {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 10em;
+  min-height: 75vh;
+}
+.account__form {
+  display: grid;
+  gap: 1em;
+  background: #f8f9fa;
+  padding: 2em 4em;
+  color: #212529;
+  box-shadow: 4px 4px 8px #ef233c;
+  border: 1px solid #212529;
+  border-radius: 10px;
+}
+.account__form > input:not(input[type=submit]) {
+  padding: 1.5ch;
+  border-radius: inherit;
+  border: inherit;
+  background: inherit;
+  box-shadow: 4px 4px 4px #e36414;
+}
+
+.button--link {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.button--link:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=main.css.map */
