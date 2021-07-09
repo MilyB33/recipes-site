@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import getRecipes from '../api/spoon';
-import { FETCH_RECIPE, FETCH_RECIPES } from './types';
+import { END_LOADING, FETCH_RECIPE, FETCH_RECIPES } from './types';
 
 export const fetchRecipes = (data) => (dispatch) =>
   _fetchRecipes(data, dispatch);
@@ -35,4 +35,8 @@ export const fetchRecipeInformation = (id) => async (dispatch) => {
   );
 
   dispatch({ type: FETCH_RECIPE, payload: response.data });
+};
+
+export const endLoading = () => {
+  return { type: END_LOADING };
 };

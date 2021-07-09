@@ -14,7 +14,7 @@
 }
 
 .browse__results {
-  margin-top: 1rem;
+  margin: 1rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -29,10 +29,16 @@
 .recipe__card {
   text-align: center;
   max-width: 19.5rem;
-  height: 20rem;
+  background: rgba($clr-additional-100, 0.8);
+  box-shadow: 4px 4px 8px $clr-dark-200;
+  padding: 0.5rem;
+
+  &__image {
+    max-height: 20rem;
+    max-width: 100%;
+  }
 
   &__title {
     padding: 1rem;
-    background: rgba($clr-additional-200, 0.5);
   }
 }

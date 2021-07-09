@@ -23,17 +23,16 @@ class RecipeInfo extends Component {
 
     return (
       <div className="recipe">
+        <Header recipe={recipeInfo} />
         <Tags
           diets={recipeInfo.diets}
           dishTypes={recipeInfo.dishTypes}
           cuisines={recipeInfo.cuisines}
         />
 
-        <Header recipe={recipeInfo} />
-
         <Ingredients ingredients={recipeInfo.extendedIngredients} />
+        <Instructions />
         <Info recipe={recipeInfo} />
-        <Instructions instructions={recipeInfo.instructions} />
       </div>
     );
   }

@@ -8,9 +8,9 @@ const Recipe = ({ recipe }) => {
         <img
           src={recipe.image}
           alt="recipe"
-          className="recipe__image"
+          className="recipe__card__image"
         />
-        <p className="recipe__title">{recipe.title}</p>
+        <p className="recipe__card__title">{recipe.title}</p>
       </Link>
     </div>
   );

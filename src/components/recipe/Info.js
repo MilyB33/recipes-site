@@ -3,7 +3,14 @@ import _ from 'lodash';
 
 const Info = ({ recipe }) => {
   const _recipe = _.toPairs(
-    _.pick(recipe, ['vegetarian', 'vegan', 'glutenFree', 'dairyFree'])
+    _.pick(recipe, [
+      'vegetarian',
+      'vegan',
+      'glutenFree',
+      'dairyFree',
+      'veryHealthy',
+      'veryPopular',
+    ])
   );
 
   const renderList = () => {
@@ -27,12 +34,28 @@ const Info = ({ recipe }) => {
     });
   };
 
+  const renderSecList = () => {
+    return (
+      <tr className="recipe__row">
+        <td className="recipe__column">
+          <p>Preparation time</p>
+        </td>
+        <td className="recipe__column">
+          <p>{`${recipe.readyInMinutes} minutes`}</p>
+        </td>
+      </tr>
+    );
+  };
+
   return (
     <table className="recipe__info container--recipe">
       <caption>
         <h2 className="recipe__caption">Info :</h2>
       </caption>
-      <tbody className="recipe__box">{renderList()}</tbody>
+      <tbody className="recipe__box">
+        {renderList()}
+        {renderSecList()}
+      </tbody>
     </table>
   );
 };

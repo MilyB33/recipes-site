@@ -5,7 +5,7 @@
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto-fill, minmax(0, 50vh));
+  grid-template-rows: 50vh repeat(auto-fit, 1fr);
 
   &__tags {
     text-align: center;
@@ -72,6 +72,20 @@
   &__instruction {
     height: 100%;
     line-height: 150%;
+
+    &__text > ol,
+    ul {
+      list-style: decimal;
+      padding: 1rem;
+
+      & > li {
+        margin: 1rem 0;
+      }
+    }
+  }
+
+  &__image {
+    box-shadow: 4px 4px 8px black, 4px 4px 8px white;
   }
 }
 
