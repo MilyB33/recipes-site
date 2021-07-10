@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LogInForm = ({ onChange }) => {
+const LogInForm = ({ onVisibilityChange }) => {
   return (
     <form className="account__form">
       <h1>Log In :</h1>
@@ -21,7 +21,7 @@ const LogInForm = ({ onChange }) => {
       />
 
       <input type="submit" value="Log In" className="button" />
-      <button className="button--link" onClick={onChange}>
+      <button className="button--link" onClick={onVisibilityChange}>
         Don't have an Account? Create one.
       </button>
     </form>

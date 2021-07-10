@@ -1,6 +1,16 @@
 import _ from 'lodash';
 import getRecipes from '../api/spoon';
-import { END_LOADING, FETCH_RECIPE, FETCH_RECIPES } from './types';
+import auth from '../api/auth';
+import {
+  CLEAR_ERROR,
+  END_LOADING,
+  ERROR,
+  FETCH_RECIPE,
+  FETCH_RECIPES,
+  REGISTER,
+} from './types';
+
+// RECIPES ACTIONS
 
 export const fetchRecipes = (data) => (dispatch) =>
   _fetchRecipes(data, dispatch);
@@ -39,4 +49,32 @@ export const fetchRecipeInformation = (id) => async (dispatch) => {
 
 export const endLoading = () => {
   return { type: END_LOADING };
+};
+
+// USERS ACTIONS
+
+export const register = (user) => async (dispatch) => {
+  try {
+    const response = await auth.post(
+      '/register',
+      JSON.stringify(user)
+    );
+
+    localStorage.setItem('token', response.data.accessToken);
+
+    dispatch({
+      type: REGISTER,
+      payload: {
+        token: response.data.accessToken,
+        user: _.pick(user, ['username', 'email']),
+      },
+    });
+  } catch (err) {
+    console.error(err.response);
+    dispatch({ type: ERROR, payload: err.response.data });
+
+    setTimeout(() => {
+      dispatch({ type: ERROR, payload: null });
+    }, 4000);
+  }
 };

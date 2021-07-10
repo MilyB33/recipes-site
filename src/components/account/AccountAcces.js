@@ -17,9 +17,9 @@ class AccountAcces extends React.Component {
     return (
       <div className="account">
         {this.state.register ? (
-          <RegisterForm onChange={this.onAccountChange} />
+          <RegisterForm onVisibilityChange={this.onAccountChange} />
         ) : (
-          <LogInForm onChange={this.onAccountChange} />
+          <LogInForm onVisibilityChange={this.onAccountChange} />
         )}
       </div>
     );

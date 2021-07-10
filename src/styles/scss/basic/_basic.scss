@@ -74,3 +74,11 @@ input {
   border-top: 1px solid $clr-light-200;
   margin-top: auto;
 }
+
+.error {
+  color: $clr-light-100;
+  background: $clr-additional-100;
+  box-shadow: 4px 4px 1px black;
+  padding: 1rem;
+  margin: 0 auto;
+}

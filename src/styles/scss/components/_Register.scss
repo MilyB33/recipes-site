@@ -9,21 +9,38 @@
   min-height: 75vh;
 
   &__form {
+    position: relative;
     display: grid;
     gap: 1em;
     background: $clr-light-100;
     padding: 2em 4em;
     color: $clr-dark-200;
-    box-shadow: 4px 4px 8px $clr-additional-100;
+    box-shadow: 6px 6px 1px $clr-additional-200;
     border: 1px solid $clr-dark-200;
     border-radius: 10px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 2rem;
+      border-radius: 5px 5px 0 0;
+      background: $clr-additional-100;
+      transition: 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
 
     & > input:not(input[type='submit']) {
       padding: 1.5ch;
       border-radius: inherit;
       border: inherit;
       background: inherit;
-      box-shadow: 4px 4px 4px $clr-additional-200;
+      box-shadow: 4px 4px 2px $clr-additional-200;
     }
   }
 }
