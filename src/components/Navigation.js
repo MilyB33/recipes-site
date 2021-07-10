@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from '../actions';
 
-const Navigation = () => {
+const Navigation = ({ isAuthenticated, logout }) => {
   return (
     <nav className="navigation">
       <Link to="/" className="logo__link">
@@ -32,9 +34,19 @@ const Navigation = () => {
           </Link>
         </li>
         <li className="navigation__item">
-          <Link to="/logIn" className="link navigation__link">
-            LOG IN / REGISTER
-          </Link>
+          {isAuthenticated ? (
+            <Link
+              to="/"
+              className="link navigation__link logout"
+              onClick={logout}
+            >
+              LOGOUT
+            </Link>
+          ) : (
+            <Link to="/logIn" className="link navigation__link">
+              LOG IN / REGISTER
+            </Link>
+          )}
         </li>
       </ul>
 
@@ -53,4 +65,8 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+const mapStateToProps = (state) => {
+  return { isAuthenticated: state.auth.isAuthenticated };
+};
+
+export default connect(mapStateToProps, { logout })(Navigation);

@@ -2,11 +2,13 @@ import _ from 'lodash';
 import getRecipes from '../api/spoon';
 import auth from '../api/auth';
 import {
-  CLEAR_ERROR,
+  CLEAR_ERRORS,
   END_LOADING,
   ERROR,
   FETCH_RECIPE,
   FETCH_RECIPES,
+  LOGIN,
+  LOGOUT,
   REGISTER,
 } from './types';
 
@@ -70,11 +72,37 @@ export const register = (user) => async (dispatch) => {
       },
     });
   } catch (err) {
-    console.error(err.response);
     dispatch({ type: ERROR, payload: err.response.data });
-
-    setTimeout(() => {
-      dispatch({ type: ERROR, payload: null });
-    }, 4000);
+    localStorage.removeItem('token');
   }
+};
+
+export const login = (user) => async (dispatch) => {
+  try {
+    const response = await auth.post('/login', JSON.stringify(user));
+
+    localStorage.setItem('token', response.data.accessToken);
+
+    dispatch({
+      type: LOGIN,
+      payload: {
+        token: response.data.accessToken,
+        user,
+      },
+    });
+  } catch (err) {
+    dispatch({ type: ERROR, payload: err.response.data });
+    localStorage.removeItem('token');
+  }
+};
+
+export const logout = () => (dispatch) => {
+  localStorage.removeItem('token');
+  dispatch({ type: LOGOUT });
+};
+
+export const clearErrors = () => {
+  return {
+    type: CLEAR_ERRORS,
+  };
 };

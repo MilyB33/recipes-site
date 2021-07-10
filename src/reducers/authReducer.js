@@ -1,4 +1,10 @@
-import { ERROR, REGISTER } from '../actions/types';
+import {
+  CLEAR_ERRORS,
+  ERROR,
+  LOGIN,
+  LOGOUT,
+  REGISTER,
+} from '../actions/types';
 
 const INITIAL_STATE = {
   token: localStorage.getItem('token') || null,
@@ -9,6 +15,7 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case LOGIN:
     case REGISTER:
       return {
         ...state,
@@ -20,7 +27,22 @@ export default (state = INITIAL_STATE, action) => {
     case ERROR:
       return {
         ...state,
+        token: null,
+        user: null,
+        isAuthenticated: false,
         error: action.payload,
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        token: null,
+        user: null,
+        isAuthenticated: false,
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
       };
     default:
       return state;

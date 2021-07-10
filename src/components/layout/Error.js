@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { clearErrors } from '../../actions';
 
-const Error = ({ message, className }) => {
+const Error = ({ message, className, clearErrors }) => {
   useEffect(() => {
-    console.log(message);
+    setTimeout(() => {
+      clearErrors();
+    }, 4000);
   });
   return (
     <div className={`error ${className}`}>
@@ -11,4 +15,4 @@ const Error = ({ message, className }) => {
   );
 };
 
-export default Error;
+export default connect(null, { clearErrors })(Error);

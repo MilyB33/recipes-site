@@ -5,6 +5,24 @@
       "password": "$2a$10$Sr6I7gKQeB3yTDsAf2c8/.6EqV99GlxduMcsfl/dtFNsc8CMNlHZG",
       "username": "dsadasd",
       "id": 1
+    },
+    {
+      "email": "mily@wp.pl",
+      "password": "$2a$10$qHX4d7cGWkE/slUbOOGpFeJkc4aPHlwLaywFN8kP/ju524zcohDIm",
+      "username": "mily",
+      "id": 2
+    },
+    {
+      "email": "fdsFDS@sdsa",
+      "password": "$2a$10$PBOyek/iiIwIW9YyphXdJOd27Jrp3wgWfZSKK6T9zewXeR3.h/uqe",
+      "username": "fdffsdf",
+      "id": 3
+    },
+    {
+      "email": "cos@gmail.com",
+      "password": "$2a$10$Nk6r/LAWHnxKfBl8K8uHHu7Lp2LsIAiXTEMQDVlb9gZYhRDOiSYBO",
+      "username": "dasdajld",
+      "id": 4
     }
   ]
 }

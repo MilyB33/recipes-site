@@ -6,8 +6,8 @@ import Error from '../layout/Error';
 const RegisterForm = ({ onVisibilityChange, register, error }) => {
   const [user, setUser] = useState({
     username: '',
-    ['register-email']: '',
-    ['register-password']: '',
+    email: '',
+    password: '',
     ['confirm-password']: '',
     inputError: null,
   });
@@ -15,11 +15,19 @@ const RegisterForm = ({ onVisibilityChange, register, error }) => {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    if (user['register-password'] === user['confirm-password']) {
+    if (user.password === user['confirm-password']) {
       register({
         username: user.username,
-        email: user['register-email'],
-        password: user['register-password'],
+        email: user.email,
+        password: user.password,
+      });
+
+      setUser({
+        ...user,
+        username: '',
+        email: '',
+        password: '',
+        ['confirm-password']: '',
       });
     } else {
       setUser({ ...user, inputError: `Passwords aren't identical` });
@@ -60,25 +68,31 @@ const RegisterForm = ({ onVisibilityChange, register, error }) => {
         className="account__input"
         autoComplete="off"
         onChange={onChange}
+        value={user.username}
+        required
       />
 
       <label htmlFor="register-email">Email :</label>
       <input
         type="email"
         id="register-email"
-        name="register-email"
+        name="email"
         className="account__input"
         autoComplete="off"
         onChange={onChange}
+        value={user.email}
+        required
       />
 
       <label htmlFor="register-password">Password :</label>
       <input
         type="password"
         id="register-password"
-        name="register-password"
+        name="password"
         className="account__input"
         onChange={onChange}
+        value={user.password}
+        required
       />
 
       <label htmlFor="confirm-password">Confirm Password :</label>
@@ -88,6 +102,8 @@ const RegisterForm = ({ onVisibilityChange, register, error }) => {
         name="confirm-password"
         className="account__input"
         onChange={onChange}
+        value={user['confirm-password']}
+        required
       />
 
       <input type="submit" value="Register" className="button" />
