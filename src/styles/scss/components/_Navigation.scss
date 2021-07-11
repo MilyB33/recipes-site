@@ -37,6 +37,16 @@
 .socials {
   display: flex;
   gap: 1rem;
-  margin-left: auto;
   font-size: 1.5rem;
+  margin-left: auto;
+}
+
+.user__link {
+  margin-left: auto;
+}
+
+.link--user {
+  &:hover {
+    text-decoration: underline;
+  }
 }

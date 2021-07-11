@@ -23,6 +23,12 @@
       "password": "$2a$10$Nk6r/LAWHnxKfBl8K8uHHu7Lp2LsIAiXTEMQDVlb9gZYhRDOiSYBO",
       "username": "dasdajld",
       "id": 4
+    },
+    {
+      "email": "mily@gmail.com",
+      "password": "$2a$10$jpjroPBvO8CD9G7A77E4fe3UA2QBdwPAyZdLGp3i7aBtdH.1Sh9na",
+      "username": "mily",
+      "id": 5
     }
   ]
 }

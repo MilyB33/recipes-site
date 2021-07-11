@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../actions';
 
-const Navigation = ({ isAuthenticated, logout }) => {
+const Navigation = ({ isAuthenticated, logout, username }) => {
   return (
     <nav className="navigation">
       <Link to="/" className="logo__link">
@@ -50,6 +50,17 @@ const Navigation = ({ isAuthenticated, logout }) => {
         </li>
       </ul>
 
+      {isAuthenticated && (
+        <div className="user__link">
+          <Link
+            to="/logIn"
+            className="link navigation__link link--user"
+          >
+            {`Logged: ${username}`}
+          </Link>
+        </div>
+      )}
+
       <div className="socials">
         <a href="" className="link socials__link">
           <i className="fab fa-facebook-f"></i>
@@ -66,7 +77,10 @@ const Navigation = ({ isAuthenticated, logout }) => {
 };
 
 const mapStateToProps = (state) => {
-  return { isAuthenticated: state.auth.isAuthenticated };
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+    username: state.auth.user?.username,
+  };
 };
 
 export default connect(mapStateToProps, { logout })(Navigation);

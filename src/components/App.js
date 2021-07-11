@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import '../styles/css/page/main.css';
 import Navigation from './Navigation';
 import Home from './home/Home';
@@ -12,11 +8,12 @@ import Browse from './browse/Browse';
 import Contact from './contact/Contact';
 import RecipeInfo from './recipe/RecipeInfo';
 import AccountAccess from './account/AccountAcces';
+import history from '../history';
 
 function App() {
   return (
     <div className="app">
-      <Router>
+      <Router history={history}>
         <Navigation />
         <Switch>
           <Route exact path="/">

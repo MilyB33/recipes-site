@@ -1,6 +1,10 @@
 import _ from 'lodash';
 import getRecipes from '../api/spoon';
 import auth from '../api/auth';
+import setAuthToken from '../utils/setAuthToken';
+import jwt_decode from 'jwt-decode';
+import history from '../history';
+
 import {
   CLEAR_ERRORS,
   END_LOADING,
@@ -64,13 +68,17 @@ export const register = (user) => async (dispatch) => {
 
     localStorage.setItem('token', response.data.accessToken);
 
+    user = await _loadUserInfo(localStorage.token);
+
     dispatch({
       type: REGISTER,
       payload: {
         token: response.data.accessToken,
-        user: _.pick(user, ['username', 'email']),
+        user,
       },
     });
+
+    history.push('/');
   } catch (err) {
     dispatch({ type: ERROR, payload: err.response.data });
     localStorage.removeItem('token');
@@ -83,6 +91,8 @@ export const login = (user) => async (dispatch) => {
 
     localStorage.setItem('token', response.data.accessToken);
 
+    user = await _loadUserInfo(localStorage.token);
+
     dispatch({
       type: LOGIN,
       payload: {
@@ -90,6 +100,8 @@ export const login = (user) => async (dispatch) => {
         user,
       },
     });
+
+    history.push('/');
   } catch (err) {
     dispatch({ type: ERROR, payload: err.response.data });
     localStorage.removeItem('token');
@@ -105,4 +117,14 @@ export const clearErrors = () => {
   return {
     type: CLEAR_ERRORS,
   };
+};
+
+const _loadUserInfo = async (token) => {
+  setAuthToken(localStorage.token);
+
+  const id = jwt_decode(token).sub;
+
+  const response = await auth.get(`400/users/${id}`);
+
+  return _.pick(response.data, ['email', 'username', 'id']);
 };

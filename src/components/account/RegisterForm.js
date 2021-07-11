@@ -31,7 +31,7 @@ const RegisterForm = ({ onVisibilityChange, register, error }) => {
       });
     } else {
       setUser({ ...user, inputError: `Passwords aren't identical` });
-      setInterval(() => setUser({ ...user, inputError: null }), 4000);
+      setTimeout(() => setUser({ ...user, inputError: null }), 4000);
     }
   };
 
