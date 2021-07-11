@@ -11,6 +11,7 @@ import {
   ERROR,
   FETCH_RECIPE,
   FETCH_RECIPES,
+  LIKE_RECIPE,
   LOGIN,
   LOGOUT,
   REGISTER,
@@ -57,6 +58,17 @@ export const endLoading = () => {
   return { type: END_LOADING };
 };
 
+export const likeRecipe =
+  (id, title, image, userId, recipes) => async (dispatch) => {
+    const response = await auth.put(`640/info/${userId}`, {
+      likedRecipes: [...recipes, { id, title, image }],
+      userId,
+    });
+
+    console.log(response);
+    dispatch({ type: LIKE_RECIPE, payload: { id, title, image } });
+  };
+
 // USERS ACTIONS
 
 export const register = (user) => async (dispatch) => {
@@ -64,6 +76,14 @@ export const register = (user) => async (dispatch) => {
     const response = await auth.post(
       '/register',
       JSON.stringify(user)
+    );
+
+    await auth.post(
+      '/info',
+      JSON.stringify({
+        userId: user.id,
+        likedRecipes: [],
+      })
     );
 
     localStorage.setItem('token', response.data.accessToken);
@@ -92,7 +112,7 @@ export const login = (user) => async (dispatch) => {
     localStorage.setItem('token', response.data.accessToken);
 
     user = await _loadUserInfo(localStorage.token);
-
+    console.log(user);
     dispatch({
       type: LOGIN,
       payload: {
@@ -126,5 +146,10 @@ const _loadUserInfo = async (token) => {
 
   const response = await auth.get(`400/users/${id}`);
 
-  return _.pick(response.data, ['email', 'username', 'id']);
+  const likedRecipes = await auth.get(`640/info/${id}`);
+  console.log(likedRecipes);
+  return {
+    ..._.pick(response.data, ['email', 'username', 'id']),
+    likedRecipes: likedRecipes.data.likedRecipes,
+  };
 };

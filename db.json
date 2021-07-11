@@ -1,34 +1,28 @@
 {
   "users": [
     {
-      "email": "fdsfdsf@sdasd",
-      "password": "$2a$10$Sr6I7gKQeB3yTDsAf2c8/.6EqV99GlxduMcsfl/dtFNsc8CMNlHZG",
-      "username": "dsadasd",
-      "id": 1
-    },
-    {
-      "email": "mily@wp.pl",
-      "password": "$2a$10$qHX4d7cGWkE/slUbOOGpFeJkc4aPHlwLaywFN8kP/ju524zcohDIm",
-      "username": "mily",
-      "id": 2
-    },
-    {
-      "email": "fdsFDS@sdsa",
-      "password": "$2a$10$PBOyek/iiIwIW9YyphXdJOd27Jrp3wgWfZSKK6T9zewXeR3.h/uqe",
-      "username": "fdffsdf",
-      "id": 3
-    },
-    {
-      "email": "cos@gmail.com",
-      "password": "$2a$10$Nk6r/LAWHnxKfBl8K8uHHu7Lp2LsIAiXTEMQDVlb9gZYhRDOiSYBO",
-      "username": "dasdajld",
-      "id": 4
-    },
-    {
       "email": "mily@gmail.com",
-      "password": "$2a$10$jpjroPBvO8CD9G7A77E4fe3UA2QBdwPAyZdLGp3i7aBtdH.1Sh9na",
+      "password": "$2a$10$03A7Su37vxIU/oy4DwV3Bumhtmx9JWdxNAiC8v7k.j.s0YFvKnBjG",
       "username": "mily",
-      "id": 5
+      "id": 1
+    }
+  ],
+  "info": [
+    {
+      "likedRecipes": [
+        {
+          "id": 715594,
+          "title": "Homemade Garlic and Basil French Fries",
+          "image": "https://spoonacular.com/recipeImages/715594-556x370.jpg"
+        },
+        {
+          "id": 715497,
+          "title": "Berry Banana Breakfast Smoothie",
+          "image": "https://spoonacular.com/recipeImages/715497-556x370.jpg"
+        }
+      ],
+      "userId": 1,
+      "id": 1
     }
   ]
 }

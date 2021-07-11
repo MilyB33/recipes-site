@@ -655,7 +655,7 @@ input {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50vh repeat(auto-fit, 1fr);
+  grid-template-rows: 50vh;
 }
 .recipe__tags {
   text-align: center;

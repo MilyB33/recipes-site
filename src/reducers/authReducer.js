@@ -1,6 +1,7 @@
 import {
   CLEAR_ERRORS,
   ERROR,
+  LIKE_RECIPE,
   LOGIN,
   LOGOUT,
   REGISTER,
@@ -43,6 +44,14 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         error: null,
+      };
+    case LIKE_RECIPE:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          likedRecipes: [...state.user.likedRecipes, action.payload],
+        },
       };
     default:
       return state;

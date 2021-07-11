@@ -5,7 +5,7 @@
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50vh repeat(auto-fit, 1fr);
+  grid-template-rows: 50vh;
 
   &__tags {
     text-align: center;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Liked from './Liked';
 
 const Header = ({ recipe }) => {
   return (
@@ -8,7 +9,9 @@ const Header = ({ recipe }) => {
         alt="recipe"
         className="recipe__image"
       />
-      <h1 className="recipe__title">{recipe.title}</h1>
+      <h1 className="recipe__title">
+        {recipe.title} <Liked recipe={recipe} />
+      </h1>
     </header>
   );
 };
