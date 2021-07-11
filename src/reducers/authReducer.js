@@ -5,6 +5,7 @@ import {
   LOGIN,
   LOGOUT,
   REGISTER,
+  UNLIKE_RECIPE,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -51,6 +52,16 @@ export default (state = INITIAL_STATE, action) => {
         user: {
           ...state.user,
           likedRecipes: [...state.user.likedRecipes, action.payload],
+        },
+      };
+    case UNLIKE_RECIPE:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          likedRecipes: state.user.likedRecipes.filter(
+            (recipe) => recipe.id !== action.payload
+          ),
         },
       };
     default:

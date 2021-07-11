@@ -15,6 +15,7 @@ import {
   LOGIN,
   LOGOUT,
   REGISTER,
+  UNLIKE_RECIPE,
 } from './types';
 
 // RECIPES ACTIONS
@@ -60,6 +61,7 @@ export const endLoading = () => {
 
 export const likeRecipe =
   (id, title, image, userId, recipes) => async (dispatch) => {
+    console.log(id, title, image, userId, recipes);
     const response = await auth.put(`640/info/${userId}`, {
       likedRecipes: [...recipes, { id, title, image }],
       userId,
@@ -67,6 +69,18 @@ export const likeRecipe =
 
     console.log(response);
     dispatch({ type: LIKE_RECIPE, payload: { id, title, image } });
+  };
+
+export const unlikeRecipe =
+  (id, userId, recipes) => async (dispatch) => {
+    console.log('yes');
+    const response = await auth.put(`640/info/${userId}`, {
+      likedRecipes: [...recipes.filter((recipe) => recipe.id !== id)],
+      userId,
+    });
+
+    console.log(response);
+    dispatch({ type: UNLIKE_RECIPE, payload: id });
   };
 
 // USERS ACTIONS

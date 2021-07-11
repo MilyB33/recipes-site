@@ -7,3 +7,4 @@ export const ERROR = 'ERROR';
 export const LOGOUT = 'LOGOUT';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const LIKE_RECIPE = 'LIKE_RECIPE';
+export const UNLIKE_RECIPE = 'UNLIKE_RECIPE';
