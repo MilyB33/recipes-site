@@ -377,16 +377,19 @@ ul {
 
 .button {
   color: #f8f9fa;
-  background: #e36414;
+  background: #22223b;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
-  box-shadow: 2px 2px 8px black;
+  box-shadow: 2px 2px 4px black;
   cursor: pointer;
   transition: 0.5s;
 }
 .button:hover {
-  background: rgba(227, 100, 20, 0.8);
+  background: rgba(34, 34, 59, 0.8);
+}
+.button--danger {
+  background: #ef233c;
 }
 
 input {
@@ -783,6 +786,90 @@ input {
 }
 .button--link:hover {
   text-decoration: underline;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  min-height: 70vh;
+  text-align: center;
+  padding: 0 10rem;
+  margin-bottom: 2rem;
+}
+.user__info {
+  border-radius: 15px;
+  box-shadow: 2px 2px 12px #212529;
+  background: #f8f9fa;
+  padding: 2rem;
+  color: #353535;
+}
+.user__row > td {
+  padding: 1.5rem;
+}
+.user__passwords {
+  display: grid;
+  gap: 1rem;
+}
+.user__recipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 30rem;
+  max-width: 50rem;
+  min-height: 30rem;
+  background: #e9ecef;
+}
+.user__recipe__card {
+  width: 10rem;
+  height: 15rem;
+  position: relative;
+  background: #ef233c;
+  padding: 0 0 1rem 0;
+  transition: 0.5s;
+}
+.user__recipe__card:nth-child(even) {
+  background: #22223b;
+}
+.user__recipe__card:hover {
+  transform: scale(1.2);
+  z-index: 2;
+}
+.user__recipe__unlike {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+.user__recipe__title {
+  margin: 0 2rem;
+}
+.user__recipe__link {
+  position: absolute;
+  display: inline-block;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.user__recipe__image {
+  margin: 0 auto 1rem auto;
+  width: 10rem;
+  height: 7rem;
+}
+.user__recipe__image > img {
+  width: inherit;
+  height: inherit;
+}
+
+.table--user > caption {
+  margin-bottom: 1em;
+}
+
+.input--user {
+  padding: 0.5rem;
+  box-shadow: 2px 2px 4px #353535;
 }
 
 /*# sourceMappingURL=main.css.map */

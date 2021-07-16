@@ -1,5 +1,6 @@
 import {
   CLEAR_ERRORS,
+  DELETE_ACCOUNT,
   ERROR,
   LIKE_RECIPE,
   LOGIN,
@@ -35,6 +36,7 @@ export default (state = INITIAL_STATE, action) => {
         error: action.payload,
       };
     case LOGOUT:
+    case DELETE_ACCOUNT:
       return {
         ...state,
         token: null,

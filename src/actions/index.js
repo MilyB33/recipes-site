@@ -7,6 +7,7 @@ import history from '../history';
 
 import {
   CLEAR_ERRORS,
+  DELETE_ACCOUNT,
   END_LOADING,
   ERROR,
   FETCH_RECIPE,
@@ -79,7 +80,6 @@ export const unlikeRecipe =
       userId,
     });
 
-    console.log(response);
     dispatch({ type: UNLIKE_RECIPE, payload: id });
   };
 
@@ -151,6 +151,13 @@ export const clearErrors = () => {
   return {
     type: CLEAR_ERRORS,
   };
+};
+
+export const deleteAccount = (id) => async (dispatch) => {
+  // await auth.delete(`600/users/${id}`);
+  // dispatch({ type: DELETE_ACCOUNT });
+  history.push('/');
+  localStorage.removeItem('token');
 };
 
 const _loadUserInfo = async (token) => {

@@ -1,0 +1,101 @@
+@use '../abstracts/' as *;
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  min-height: 70vh;
+  text-align: center;
+  padding: 0 10rem;
+  margin-bottom: 2rem;
+
+  &__info {
+    border-radius: 15px;
+    box-shadow: 2px 2px 12px $clr-dark-200;
+    background: $clr-light-100;
+    padding: 2rem;
+    color: $clr-dark-100;
+  }
+
+  &__row {
+    & > td {
+      padding: 1.5rem;
+    }
+  }
+
+  &__passwords {
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-width: 30rem;
+    max-width: 50rem;
+    min-height: 30rem;
+    background: $clr-light-200;
+  }
+
+  &__recipe__card {
+    width: 10rem;
+    height: 15rem;
+    position: relative;
+    background: $clr-additional-100;
+    padding: 0 0 1rem 0;
+    transition: 0.5s;
+
+    &:nth-child(even) {
+      background: $clr-additional-300;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      z-index: 2;
+    }
+  }
+
+  &__recipe__unlike {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+
+  &__recipe__title {
+    margin: 0 2rem;
+  }
+
+  &__recipe__link {
+    position: absolute;
+    display: inline-block;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__recipe__image {
+    margin: 0 auto 1rem auto;
+    width: 10rem;
+    height: 7rem;
+
+    & > img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+}
+
+.table--user {
+  & > caption {
+    margin-bottom: 1em;
+  }
+}
+
+.input--user {
+  padding: 0.5rem;
+  box-shadow: 2px 2px 4px $clr-dark-100;
+}

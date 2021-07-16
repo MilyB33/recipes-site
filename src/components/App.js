@@ -8,6 +8,7 @@ import Browse from './browse/Browse';
 import Contact from './contact/Contact';
 import RecipeInfo from './recipe/RecipeInfo';
 import AccountAccess from './account/AccountAcces';
+import User from './user/User';
 import history from '../history';
 
 function App() {
@@ -16,13 +17,12 @@ function App() {
       <Router history={history}>
         <Navigation />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
+          <Route exact path="/" component={Home} />
           <Route exact path="/browse/:type" component={Browse} />
           <Route exact path="/recipe/:id" component={RecipeInfo} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/logIn" component={AccountAccess} />
+          <Route exact path="/account/:username" component={User} />
         </Switch>
         <Footer />
       </Router>

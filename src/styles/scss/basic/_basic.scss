@@ -45,16 +45,20 @@ ul {
 
 .button {
   color: $clr-light-100;
-  background: $clr-additional-200;
+  background: $clr-additional-300;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
-  box-shadow: 2px 2px 8px black;
+  box-shadow: 2px 2px 4px black;
   cursor: pointer;
   transition: 0.5s;
 
   &:hover {
-    background: rgba($clr-additional-200, 0.8);
+    background: rgba($clr-additional-300, 0.8);
+  }
+
+  &--danger {
+    background: $clr-additional-100;
   }
 }
 

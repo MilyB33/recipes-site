@@ -53,7 +53,7 @@ const Navigation = ({ isAuthenticated, logout, username }) => {
       {isAuthenticated && (
         <div className="user__link">
           <Link
-            to="/logIn"
+            to={`/account/${username}`}
             className="link navigation__link link--user"
           >
             {`Logged: ${username}`}
