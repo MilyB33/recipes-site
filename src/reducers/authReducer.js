@@ -7,6 +7,7 @@ import {
   LOGOUT,
   REGISTER,
   UNLIKE_RECIPE,
+  UPDATE_ACCOUNT,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -65,6 +66,12 @@ export default (state = INITIAL_STATE, action) => {
             (recipe) => recipe.id !== action.payload
           ),
         },
+      };
+    case UPDATE_ACCOUNT:
+      console.log('yes');
+      return {
+        ...state,
+        user: { ...state.user, ...action.payload },
       };
     default:
       return state;

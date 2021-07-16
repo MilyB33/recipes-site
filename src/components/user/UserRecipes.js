@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import RecipeCard from './RecipeCard';
 const UserRecipes = ({ recipes }) => {
   const renderCards = () => {
-    console.log(recipes);
-    return recipes.map((recipe) => {
+    return recipes?.map((recipe) => {
       return <RecipeCard recipe={recipe} key={recipe.id} />;
     });
   };

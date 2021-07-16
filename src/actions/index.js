@@ -17,6 +17,7 @@ import {
   LOGOUT,
   REGISTER,
   UNLIKE_RECIPE,
+  UPDATE_ACCOUNT,
 } from './types';
 
 // RECIPES ACTIONS
@@ -154,8 +155,8 @@ export const clearErrors = () => {
 };
 
 export const deleteAccount = (id) => async (dispatch) => {
-  // await auth.delete(`600/users/${id}`);
-  // dispatch({ type: DELETE_ACCOUNT });
+  await auth.delete(`600/users/${id}`);
+  dispatch({ type: DELETE_ACCOUNT });
   history.push('/');
   localStorage.removeItem('token');
 };
@@ -173,4 +174,18 @@ const _loadUserInfo = async (token) => {
     ..._.pick(response.data, ['email', 'username', 'id']),
     likedRecipes: likedRecipes.data.likedRecipes,
   };
+};
+
+export const updateAccount = (user, data) => async (dispatch) => {
+  const response = await auth.get(`users/${user.id}`);
+
+  const response2 = await auth.put(`/users/${user.id}`, {
+    ...response.data,
+    ...data,
+  });
+
+  console.log(response2);
+  if (!data?.password) {
+    dispatch({ type: UPDATE_ACCOUNT, payload: data });
+  }
 };
