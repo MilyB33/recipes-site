@@ -63,20 +63,17 @@ export const endLoading = () => {
 
 export const likeRecipe =
   (id, title, image, userId, recipes) => async (dispatch) => {
-    console.log(id, title, image, userId, recipes);
-    const response = await auth.put(`640/info/${userId}`, {
+    await auth.put(`640/info/${userId}`, {
       likedRecipes: [...recipes, { id, title, image }],
       userId,
     });
 
-    console.log(response);
     dispatch({ type: LIKE_RECIPE, payload: { id, title, image } });
   };
 
 export const unlikeRecipe =
   (id, userId, recipes) => async (dispatch) => {
-    console.log('yes');
-    const response = await auth.put(`640/info/${userId}`, {
+    await auth.put(`640/info/${userId}`, {
       likedRecipes: [...recipes.filter((recipe) => recipe.id !== id)],
       userId,
     });
@@ -179,12 +176,11 @@ const _loadUserInfo = async (token) => {
 export const updateAccount = (user, data) => async (dispatch) => {
   const response = await auth.get(`users/${user.id}`);
 
-  const response2 = await auth.put(`/users/${user.id}`, {
+  await auth.put(`/users/${user.id}`, {
     ...response.data,
     ...data,
   });
 
-  console.log(response2);
   if (!data?.password) {
     dispatch({ type: UPDATE_ACCOUNT, payload: data });
   }

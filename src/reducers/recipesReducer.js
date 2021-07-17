@@ -22,7 +22,6 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         recipeInfo: action.payload,
-        loading: true,
       };
     case END_LOADING:
       return {

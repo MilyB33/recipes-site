@@ -31,7 +31,7 @@ class BrowseForm extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state);
+    // this.props.fetchRecipes(this.state);
   }
 
   getRecipes() {

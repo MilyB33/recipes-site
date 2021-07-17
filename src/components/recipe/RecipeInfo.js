@@ -10,12 +10,12 @@ import Header from './Header';
 
 class RecipeInfo extends Component {
   componentDidMount() {
-    if (_.isEmpty(this.props.recipeInfo))
-      this.props.fetchRecipeInformation(this.props.match.params.id);
+    // if (_.isEmpty(this.props.recipeInfo))
+    this.props.fetchRecipeInformation(this.props.match.params.id);
   }
 
   componentDidUpdate() {
-    console.log(this.props.recipeInfo);
+    // this.props.fetchRecipeInformation(this.props.match.params.id);
   }
 
   render() {

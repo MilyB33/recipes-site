@@ -9,7 +9,14 @@
   ],
   "info": [
     {
-      "likedRecipes": [],
+      "likedRecipes": [
+        {
+          "id": 715392,
+          "title": "Chicken Tortilla Soup (Slow Cooker)",
+          "image": "https://spoonacular.com/recipeImages/715392-556x370.jpg"
+        }
+      ],
+      "userId": 1,
       "id": 1
     }
   ]
