@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { cardAnimation } from '../../animations/animations';
 
 const Recipe = ({ recipe }) => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    cardAnimation(ref.current);
+  }, []);
+
   return (
-    <div className="recipe__card">
+    <div className="recipe__card" ref={ref}>
       <Link to={`/recipe/${recipe.id}`}>
         <img
           src={recipe.image}

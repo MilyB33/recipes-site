@@ -10,10 +10,10 @@ const Header = ({ recipe, isAuthenticated }) => {
         alt="recipe"
         className="recipe__image"
       />
-      <h1 className="recipe__title">
-        {recipe.title}
+      <div className="recipe__header__box">
         {isAuthenticated && <Liked recipe={recipe} />}
-      </h1>
+        <h1 className="recipe__title">{recipe.title}</h1>
+      </div>
     </header>
   );
 };

@@ -11,7 +11,7 @@ const SelectItem = ({
   const renderOptions = () => {
     return data.map((item) => {
       return (
-        <option key={item} value={item}>
+        <option key={item} value={item} className="option--browse">
           {item}
         </option>
       );
@@ -26,6 +26,7 @@ const SelectItem = ({
       <select
         id={id}
         value={defaultValue}
+        className="input--browse"
         onChange={(e) => onChange(id, e.target.value)}
       >
         {renderOptions()}

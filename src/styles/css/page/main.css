@@ -377,7 +377,7 @@ ul {
 
 .button {
   color: #f8f9fa;
-  background: #22223b;
+  background: #e36414;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
@@ -386,7 +386,7 @@ ul {
   transition: 0.5s;
 }
 .button:hover {
-  background: rgba(34, 34, 59, 0.8);
+  background: rgba(227, 100, 20, 0.8);
 }
 .button--danger {
   background: #ef233c;
@@ -424,7 +424,8 @@ input {
   align-items: center;
   z-index: 9999;
   background: #353535;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
+  border-bottom: 4px dashed #ef233c;
 }
 .navigation__list {
   display: inherit;
@@ -434,7 +435,7 @@ input {
   transition: 0.5s;
 }
 .navigation__item:hover {
-  transform: scale(1.5);
+  transform: scale(1.3);
 }
 .navigation__link {
   padding: 2rem;
@@ -452,16 +453,18 @@ input {
   margin-left: auto;
 }
 
-.user__link {
-  margin-left: auto;
+.link--user {
+  padding: 1rem;
+  transition: 0.3s;
 }
-
 .link--user:hover {
+  color: #ff006e;
   text-decoration: underline;
 }
 
 .slider {
   position: relative;
+  margin-top: 10px;
 }
 .slider__item {
   height: 80vh;
@@ -574,7 +577,7 @@ input {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 1rem;
+  gap: 2.5rem;
   min-height: 50vh;
 }
 
@@ -585,9 +588,10 @@ input {
 .recipe__card {
   text-align: center;
   max-width: 19.5rem;
-  background: rgba(239, 35, 60, 0.8);
-  box-shadow: 4px 4px 8px #212529;
-  padding: 0.5rem;
+  background: rgba(255, 0, 110, 0.7);
+  box-shadow: 2px 2px 4px 4px #212529;
+  transition: 0.3s;
+  opacity: 0;
 }
 .recipe__card__image {
   max-height: 20rem;
@@ -595,6 +599,23 @@ input {
 }
 .recipe__card__title {
   padding: 1rem;
+}
+.recipe__card:hover {
+  transform: scale(1.1);
+}
+
+.input--browse {
+  padding: 1ch;
+  background: rgba(239, 35, 60, 0.5);
+  border-radius: 5px;
+  color: #f8f9fa;
+  border: none;
+}
+.input--browse::-webkit-scrollbar {
+  display: none;
+}
+.input--browse:focus {
+  background: rgba(239, 35, 60, 0.8);
 }
 
 .contact {
@@ -669,6 +690,10 @@ input {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 50vh;
 }
+.recipe__header__box {
+  display: flex;
+  align-items: center;
+}
 .recipe__tags {
   text-align: center;
 }
@@ -691,6 +716,7 @@ input {
 }
 .recipe__title {
   text-align: center;
+  width: 100%;
 }
 .recipe__box {
   display: grid;
@@ -745,6 +771,11 @@ input {
   border-radius: 15px;
   padding: 1rem;
   box-shadow: 4px 4px 8px #ef233c;
+}
+
+.button--liked {
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .account {

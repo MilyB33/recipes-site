@@ -56,6 +56,7 @@ class BrowseForm extends React.Component {
         <div className="browse-form__box">
           <label htmlFor="keyword">Keyword</label>
           <input
+            className="input--browse"
             type="text"
             id="keyword"
             onChange={(e) =>

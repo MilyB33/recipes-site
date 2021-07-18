@@ -2,7 +2,7 @@
   "users": [
     {
       "email": "mily@gmail.com",
-      "password": "$2a$10$9aGrOWa7xRGG9.nthH7Ku.U1U9Z.IJxxXjhatJDXEiwqMAM0LnW7.",
+      "password": "$2a$10$zi.wBlm0pZrk1W2n7u3Zk.jSx2jo2OtLm8HvEziLWfnvirKq5tA9O",
       "username": "mily",
       "id": 1
     }
@@ -11,9 +11,14 @@
     {
       "likedRecipes": [
         {
-          "id": 715392,
-          "title": "Chicken Tortilla Soup (Slow Cooker)",
-          "image": "https://spoonacular.com/recipeImages/715392-556x370.jpg"
+          "id": 648506,
+          "title": "Japanese Sushi",
+          "image": "https://spoonacular.com/recipeImages/648506-556x370.jpg"
+        },
+        {
+          "id": 715594,
+          "title": "Homemade Garlic and Basil French Fries",
+          "image": "https://spoonacular.com/recipeImages/715594-556x370.jpg"
         }
       ],
       "userId": 1,

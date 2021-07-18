@@ -18,7 +18,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 1rem;
+  gap: 2.5rem;
   min-height: 50vh;
 }
 
@@ -29,9 +29,10 @@
 .recipe__card {
   text-align: center;
   max-width: 19.5rem;
-  background: rgba($clr-additional-100, 0.8);
-  box-shadow: 4px 4px 8px $clr-dark-200;
-  padding: 0.5rem;
+  background: rgba($clr-additional-400, 0.7);
+  box-shadow: 2px 2px 4px 4px $clr-dark-200;
+  transition: 0.3s;
+  opacity: 0;
 
   &__image {
     max-height: 20rem;
@@ -40,5 +41,25 @@
 
   &__title {
     padding: 1rem;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.input--browse {
+  padding: 1ch;
+  background: rgba($clr-additional-100, 0.5);
+  border-radius: 5px;
+  color: $clr-light-100;
+  border: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:focus {
+    background: rgba($clr-additional-100, 0.8);
   }
 }

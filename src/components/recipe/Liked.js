@@ -15,14 +15,14 @@ const Liked = ({
         (likedRecipe) => likedRecipe.id === recipe.id
       ) ? (
         <i
-          className="fas fa-heart"
+          className="fas fa-heart button--liked"
           onClick={() =>
             unlikeRecipe(recipe.id, userId, likedRecipes)
           }
         />
       ) : (
         <i
-          className="far fa-heart"
+          className="far fa-heart button--liked"
           onClick={() =>
             likeRecipe(
               recipe.id,
