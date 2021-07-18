@@ -75,3 +75,9 @@ export const intolerances = [
   'Tree Nut',
   'Wheat',
 ];
+
+export const sliderPaths = [
+  'slider1.jpg',
+  'slider2.jpg',
+  'slider3.jpg',
+];
