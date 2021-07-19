@@ -2,8 +2,12 @@
 
 .categories {
   text-align: center;
-  padding: 0 10rem;
+  padding: 0 2rem;
   margin-bottom: 2rem;
+
+  @media (min-width: 800px) {
+    padding: 0 10rem;
+  }
 
   &__list {
     width: 100%;
@@ -13,7 +17,11 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
-    max-height: 30vh;
+    max-height: 50vh;
+
+    @media (min-width: 700px) {
+      max-height: 30vh;
+    }
 
     @media (min-width: 1400px) {
       gap: 2rem;

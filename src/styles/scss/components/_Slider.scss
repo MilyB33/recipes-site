@@ -5,7 +5,11 @@
   margin-top: 10px;
 
   &__item {
-    height: 80vh;
+    height: 50vh;
+
+    @media (min-width: 800px) {
+      height: 80vh;
+    }
   }
 }
 

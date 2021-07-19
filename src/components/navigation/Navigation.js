@@ -25,7 +25,6 @@ class Navigation extends React.Component {
   }
 
   toggleNav = () => {
-    console.log('yes');
     this.setState({ showNav: !this.state.showNav });
   };
 
@@ -38,7 +37,7 @@ class Navigation extends React.Component {
           <nav className="navigation">
             <Link to="/" className="logo__link">
               <img
-                src="./static/food-serving.png"
+                src="../../static/food-serving.png"
                 alt="Site logo"
                 className="logo"
               />
