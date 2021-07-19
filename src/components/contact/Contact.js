@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <div className="contact">
+    <main className="container container--contact">
       <h1>How to find us</h1>
       <div className="map"></div>
       <p className="contact__description">
@@ -14,26 +14,26 @@ const Contact = () => {
         malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit
         amet, consectetuer adipiscing elit.
       </p>
-      <div className="contact__info">
-        <div className="contact__info__item">
+      <section className="contact__info">
+        <section className="contact__info__item">
           <i className="fas fa-home"></i>
           <div>
             <p>3235 Farm Meadow Drive</p>
             <p>Nashville</p>
           </div>
-        </div>
-        <div className="contact__info__item">
+        </section>
+        <section className="contact__info__item">
           <i className="fas fa-phone"></i>
           <div>
             <p>931-233-5070</p>
             <p>615-456-9993</p>
           </div>
-        </div>
-        <div className="contact__info__item">
+        </section>
+        <section className="contact__info__item">
           <i className="fas fa-envelope"></i>
           <p>b87yb3657fp@temporary-mail.net</p>
-        </div>
-      </div>
+        </section>
+      </section>
       <form className="contact__form">
         <h2>Contact form</h2>
         <div className="contact__form__grid">
@@ -62,7 +62,7 @@ const Contact = () => {
           </button>
         </div>
       </form>
-    </div>
+    </main>
   );
 };
 

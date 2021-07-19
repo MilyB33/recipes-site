@@ -22,7 +22,7 @@ class RecipeInfo extends Component {
     const recipeInfo = this.props.recipeInfo;
 
     return (
-      <div className="recipe">
+      <section className="recipe">
         <Header recipe={recipeInfo} />
         <Tags
           diets={recipeInfo.diets}
@@ -33,7 +33,7 @@ class RecipeInfo extends Component {
         <Ingredients ingredients={recipeInfo.extendedIngredients} />
         <Instructions />
         <Info recipe={recipeInfo} />
-      </div>
+      </section>
     );
   }
 }

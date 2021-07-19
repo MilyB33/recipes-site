@@ -15,13 +15,13 @@ class AccountAcces extends React.Component {
 
   render() {
     return (
-      <div className="account">
+      <main className="account">
         {this.state.register ? (
           <RegisterForm onVisibilityChange={this.onAccountChange} />
         ) : (
           <LogInForm onVisibilityChange={this.onAccountChange} />
         )}
-      </div>
+      </main>
     );
   }
 }

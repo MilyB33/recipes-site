@@ -33,7 +33,7 @@ export class UserInfo extends Component {
 
   render() {
     return (
-      <div className="user__info">
+      <section className="user__info">
         <table className="table--user">
           <caption>
             <h2>Your Account :</h2>
@@ -92,7 +92,7 @@ export class UserInfo extends Component {
             </tr>
           </tbody>
         </table>
-      </div>
+      </section>
     );
   }
 }

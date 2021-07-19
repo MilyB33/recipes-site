@@ -16,10 +16,19 @@ export const slideOnLoad = (element) => {
 };
 
 export const slideOnVisibility = (element) => {
-  console.log(element.clientWidth);
-  gsap.to(element, {
-    left: 0,
-    duration: 1,
-    delay: 3,
-  });
+  let settings = {
+    treshold: 1.0,
+  };
+
+  let observer = new IntersectionObserver((entry) => {
+    if (entry[0].isIntersecting) {
+      observer.unobserve(element);
+      gsap.to(element, {
+        opacity: 1,
+        duration: 2,
+      });
+    }
+  }, settings);
+
+  observer.observe(element);
 };

@@ -15,10 +15,10 @@ class Instructions extends Component {
 
   render() {
     return (
-      <div className="recipe__instruction container--recipe">
+      <article className="recipe__instruction container--recipe">
         <h2>Instruction :</h2>
         <p ref={this.myRef} className="recipe__instruction__text"></p>
-      </div>
+      </article>
     );
   }
 }

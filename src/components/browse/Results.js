@@ -19,9 +19,9 @@ class Results extends React.Component {
 
   render() {
     return (
-      <div className="browse__results">
+      <section className="browse__results">
         {this.props.loading ? <BarLoader /> : this.renderRecipes()}
-      </div>
+      </section>
     );
   }
 }

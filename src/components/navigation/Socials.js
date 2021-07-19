@@ -2,17 +2,26 @@ import React from 'react';
 
 const Socials = () => {
   return (
-    <div className="socials">
-      <a href="" className="link socials__link">
+    <section className="socials">
+      <a
+        href="https://www.facebook.com"
+        className="link socials__link"
+      >
         <i className="fab fa-facebook-f"></i>
       </a>
-      <a href="" className="link socials__link">
+      <a
+        href="https://twitter.com/?lang=pl"
+        className="link socials__link"
+      >
         <i className="fab fa-twitter"></i>
       </a>
-      <a href="" className="link socials__link">
+      <a
+        href="https://www.instagram.com/"
+        className="link socials__link"
+      >
         <i className="fab fa-instagram-square"></i>
       </a>
-    </div>
+    </section>
   );
 };
 

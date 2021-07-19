@@ -16,10 +16,10 @@ const Tags = ({ diets, dishTypes, cuisines }) => {
   };
 
   return (
-    <div className="recipe__tags">
+    <article className="recipe__tags">
       <h2>Tags :</h2>
       <div className="recipe__tags__list">{renderList()}</div>
-    </div>
+    </article>
   );
 };
 

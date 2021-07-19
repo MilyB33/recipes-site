@@ -10,7 +10,7 @@ const Recipe = ({ recipe }) => {
   }, []);
 
   return (
-    <div className="recipe__card" ref={ref}>
+    <article className="recipe__card" ref={ref}>
       <Link to={`/recipe/${recipe.id}`}>
         <img
           src={recipe.image}
@@ -19,7 +19,7 @@ const Recipe = ({ recipe }) => {
         />
         <p className="recipe__card__title">{recipe.title}</p>
       </Link>
-    </div>
+    </article>
   );
 };
 

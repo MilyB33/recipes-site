@@ -6,7 +6,7 @@ import Results from './Results';
 class Browse extends React.Component {
   render() {
     return (
-      <main className="container container--home">
+      <main className="container">
         <Slider text="Search for recipe" />
         <BrowseFrom param={this.props.match.params.type} />
         <Results />

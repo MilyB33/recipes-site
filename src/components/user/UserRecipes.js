@@ -9,7 +9,7 @@ const UserRecipes = ({ recipes }) => {
     });
   };
 
-  return <div className="user__recipes">{renderCards()}</div>;
+  return <section className="user__recipes">{renderCards()}</section>;
 };
 
 const mapStateToProps = (state) => {
