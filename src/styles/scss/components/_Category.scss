@@ -11,9 +11,13 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 2rem;
     max-height: 30vh;
+
+    @media (min-width: 1400px) {
+      gap: 2rem;
+    }
   }
 
   &__item {

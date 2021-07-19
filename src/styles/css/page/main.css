@@ -415,10 +415,19 @@ input {
   margin: 0 auto;
 }
 
+a {
+  font-size: 0.8rem;
+}
+@media (min-width: 1150px) {
+  a {
+    font-size: initial;
+  }
+}
+
 p {
   font-size: 0.5rem;
 }
-@media (min-width: 1110px) {
+@media (min-width: 1150px) {
   p {
     font-size: 1rem;
   }
@@ -426,19 +435,53 @@ p {
 
 .navigation {
   display: flex;
-  position: sticky;
+  flex-direction: column;
+  position: fixed;
   top: 0;
   left: 0;
-  gap: 5em;
+  gap: 6em;
   align-items: center;
-  z-index: 9999;
+  z-index: 800;
   background: #353535;
   padding: 0.5rem;
-  border-bottom: 4px dashed #ef233c;
+  border-right: 4px dashed #ef233c;
+  width: 40vw;
+  height: 100vh;
+}
+@media (min-width: 800px) {
+  .navigation {
+    border-right: none;
+    border-bottom: 4px dashed #ef233c;
+    position: sticky;
+    flex-direction: row;
+    width: initial;
+    height: initial;
+    gap: 3em;
+  }
+}
+@media (min-width: 1000px) {
+  .navigation {
+    gap: 5em;
+  }
 }
 .navigation__list {
   display: inherit;
-  gap: 2em;
+  flex-direction: column;
+  gap: 5em;
+  height: 100%;
+}
+@media (min-width: 800px) {
+  .navigation__list {
+    flex-direction: row;
+    width: 100%;
+    height: initial;
+    gap: 0.5em;
+  }
+}
+@media (min-width: 1000px) {
+  .navigation__list {
+    gap: 2em;
+  }
 }
 .navigation__item {
   transition: 0.5s;
@@ -459,7 +502,15 @@ p {
   display: flex;
   gap: 1rem;
   font-size: 1.5rem;
-  margin-left: auto;
+  margin-left: initial;
+  justify-content: center;
+  margin-top: auto;
+}
+@media (min-width: 800px) {
+  .socials {
+    justify-content: initial;
+    margin-left: auto;
+  }
 }
 
 .link--user {
@@ -469,6 +520,29 @@ p {
 .link--user:hover {
   color: #ff006e;
   text-decoration: underline;
+}
+
+#navBtn {
+  position: fixed;
+  left: 5%;
+  top: 2.5%;
+  z-index: 999;
+}
+
+.button--navigation {
+  font-size: 2em;
+  padding: 0.5em;
+  border-radius: 15px;
+  background: #212529;
+  box-shadow: none;
+}
+@media (min-width: 800px) {
+  .button--navigation {
+    display: none;
+  }
+}
+.button--navigation:hover {
+  background: #212529;
 }
 
 .slider {
@@ -568,9 +642,14 @@ p {
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
   max-height: 30vh;
+}
+@media (min-width: 1400px) {
+  .categories__list {
+    gap: 2rem;
+  }
 }
 .categories__item {
   margin: 0 1rem;

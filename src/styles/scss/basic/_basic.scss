@@ -88,10 +88,18 @@ input {
 }
 
 // TYPOGRAPHY
+a {
+  font-size: 0.8rem;
+
+  @media (min-width: 1150px) {
+    font-size: initial;
+  }
+}
+
 p {
   font-size: 0.5rem;
 
-  @media (min-width: 1110px) {
+  @media (min-width: 1150px) {
     font-size: 1rem;
   }
 }

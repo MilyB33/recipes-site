@@ -16,6 +16,7 @@ import {
   LOGIN,
   LOGOUT,
   REGISTER,
+  TOGGLE_NAV,
   UNLIKE_RECIPE,
   UPDATE_ACCOUNT,
 } from './types';
