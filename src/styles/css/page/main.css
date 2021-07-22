@@ -420,29 +420,15 @@ input {
   margin: 0 auto;
 }
 
-a {
-  font-size: 0.8rem;
+:root {
+  font-size: 12px;
 }
 @media (min-width: 1150px) {
-  a {
+  :root {
     font-size: initial;
   }
 }
 
-@media (max-width: 1150px) {
-  p {
-    font-size: 0.8em;
-  }
-}
-@media (max-width: 700px) {
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h2 {
-    font-size: 1.3em;
-  }
-}
 .navigation {
   display: flex;
   flex-direction: column;
@@ -454,9 +440,14 @@ a {
   z-index: 800;
   background: #353535;
   padding: 0.5rem;
-  border-right: 4px dashed #ef233c;
-  width: 40vw;
+  width: 100vw;
   height: 100vh;
+}
+@media (min-width: 500px) {
+  .navigation {
+    border-right: 4px dashed #ef233c;
+    width: 40vw;
+  }
 }
 @media (min-width: 800px) {
   .navigation {
@@ -524,8 +515,16 @@ a {
 }
 
 .link--user {
+  display: block;
+  text-align: center;
   padding: 1rem;
   transition: 0.3s;
+}
+@media (min-width: 800px) {
+  .link--user {
+    display: initial;
+    text-align: initial;
+  }
 }
 .link--user:hover {
   color: #ff006e;
@@ -779,8 +778,15 @@ a {
 }
 .contact__info {
   display: flex;
-  gap: 4rem;
+  flex-direction: column;
+  align-items: center;
   margin-top: 2rem;
+  gap: 4rem;
+}
+@media (min-width: 800px) {
+  .contact__info {
+    flex-direction: row;
+  }
 }
 .contact__info__item {
   display: inherit;
@@ -800,13 +806,23 @@ a {
   margin-top: 1rem;
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
+}
+@media (min-width: 800px) {
+  .contact__form__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
 }
 .contact__message {
-  grid-column: 2/3;
-  grid-row: 1/4;
   resize: none;
+  min-height: 15ch;
+}
+@media (min-width: 800px) {
+  .contact__message {
+    min-height: initial;
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
 }
 .contact__input {
   padding: 1rem;
@@ -821,9 +837,13 @@ a {
 .button--contact {
   background: none;
   box-shadow: none;
-  grid-column: 2/3;
-  grid-row: 4/5;
   color: #e36414;
+}
+@media (min-width: 800px) {
+  .button--contact {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
 }
 .button--contact:hover {
   background: none;
@@ -836,8 +856,18 @@ a {
 }
 
 .container--contact {
-  padding: 0 25rem;
+  padding: 0 0%;
   margin-bottom: 2rem;
+}
+@media (min-width: 950px) {
+  .container--contact {
+    padding: 0 10%;
+  }
+}
+@media (min-width: 1300px) {
+  .container--contact {
+    padding: 0 20%;
+  }
 }
 
 .recipe {
@@ -1001,11 +1031,16 @@ a {
   display: grid;
   gap: 1em;
   background: #f8f9fa;
-  padding: 2em 4em;
+  padding: 2em 1em;
   color: #212529;
   box-shadow: 6px 6px 1px #e36414;
   border: 1px solid #212529;
   border-radius: 10px;
+}
+@media (min-width: 500px) {
+  .account__form {
+    padding: 2em 4em;
+  }
 }
 .account__form::after {
   content: "";
@@ -1042,37 +1077,90 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  flex-wrap: wrap;
+  gap: 2em;
   min-height: 70vh;
   text-align: center;
-  padding: 0 10rem;
+  padding: 2rem 2rem;
   margin-bottom: 2rem;
+}
+@media (min-width: 600px) {
+  .user {
+    padding: 2rem 6rem;
+  }
+}
+@media (min-width: 1200px) {
+  .user {
+    padding: 0 6rem;
+    flex-wrap: nowrap;
+    gap: 5em;
+  }
+}
+@media (min-width: 1300px) {
+  .user {
+    padding: 0 10rem;
+  }
 }
 .user__info {
   border-radius: 15px;
   box-shadow: 2px 2px 12px #212529;
   background: #f8f9fa;
-  padding: 2rem;
+  padding: 0.5em;
   color: #353535;
 }
+@media (min-width: 400px) {
+  .user__info {
+    padding: 1em;
+  }
+}
+@media (min-width: 1100px) {
+  .user__info {
+    padding: 2em;
+  }
+}
 .user__row > td {
-  padding: 1.5rem;
+  padding: 0.5rem;
+}
+@media (min-width: 400px) {
+  .user__row > td {
+    padding: 1rem;
+  }
+}
+@media (min-width: 1100px) {
+  .user__row > td {
+    padding: 1.5rem;
+  }
 }
 .user__passwords {
   display: grid;
   gap: 1rem;
 }
 .user__recipes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-width: 30rem;
-  max-width: 50rem;
+  display: grid;
+  max-width: initial;
   min-height: 30rem;
 }
+@media (min-width: 400px) {
+  .user__recipes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 700px) {
+  .user__recipes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .user__recipes {
+    max-width: 60%;
+  }
+}
+@media (min-width: 1300px) {
+  .user__recipes {
+    max-width: 40%;
+  }
+}
 .user__recipe__card {
-  width: 10rem;
   height: 15rem;
   position: relative;
   background: #ef233c;
@@ -1104,8 +1192,8 @@ a {
   transform: translateX(-50%);
 }
 .user__recipe__image {
+  width: 100%;
   margin: 0 auto 1rem auto;
-  width: 10rem;
   height: 7rem;
 }
 .user__recipe__image > img {

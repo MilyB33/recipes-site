@@ -22,7 +22,7 @@ class NewPassword extends Component {
 
   render() {
     return (
-      <tr className="user__row">
+      <tr className="user__row user__row--additional">
         <td>New Password :</td>
         <td className="user__passwords">
           <input

@@ -92,26 +92,20 @@ input {
 }
 
 // TYPOGRAPHY
-a {
-  font-size: 0.8rem;
+:root {
+  font-size: 12px;
 
   @media (min-width: 1150px) {
     font-size: initial;
   }
 }
 
-@media (max-width: 1150px) {
-  p {
-    font-size: 0.8em;
-  }
-}
+// @media (max-width: 700px) {
+//   h1 {
+//     font-size: 1.5em;
+//   }
 
-@media (max-width: 700px) {
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h2 {
-    font-size: 1.3em;
-  }
-}
+//   h2 {
+//     font-size: 1.3em;
+//   }
+// }

@@ -18,7 +18,7 @@ class NewEmail extends Component {
 
   render() {
     return (
-      <tr className="user__row">
+      <tr className="user__row user__row--additional">
         <td>New Email :</td>
         <td>
           <input

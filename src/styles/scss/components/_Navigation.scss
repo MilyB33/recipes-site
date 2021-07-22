@@ -11,9 +11,14 @@
   z-index: 800;
   background: $clr-dark-100;
   padding: 0.5rem;
-  border-right: 4px dashed $clr-additional-100;
-  width: 40vw;
+
+  width: 100vw;
   height: 100vh;
+
+  @media (min-width: 500px) {
+    border-right: 4px dashed $clr-additional-100;
+    width: 40vw;
+  }
 
   @media (min-width: 800px) {
     border-right: none;
@@ -80,8 +85,15 @@
 }
 
 .link--user {
+  display: block;
+  text-align: center;
   padding: 1rem;
   transition: 0.3s;
+
+  @media (min-width: 800px) {
+    display: initial;
+    text-align: initial;
+  }
 
   &:hover {
     color: $clr-additional-400;

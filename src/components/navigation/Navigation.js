@@ -5,6 +5,7 @@ import RegLink from './RegLink';
 import AccountLink from './AccountLink';
 import Socials from './Socials';
 import NavBtn from './NavBtn';
+import history from '../../history';
 
 class Navigation extends React.Component {
   state = {
@@ -18,9 +19,15 @@ class Navigation extends React.Component {
     window
       .matchMedia('(min-width:800px)')
       .addEventListener('change', (event) => {
-        console.log(event.matches);
         if (event.matches) this.setState({ showNav: true });
-        else this.setState({ showNav: false });
+        else {
+          // When Url change close menu
+          history.listen(() => {
+            this.setState({ showNav: false });
+          });
+
+          this.setState({ showNav: false });
+        }
       });
   }
 
