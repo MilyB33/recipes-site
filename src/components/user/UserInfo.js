@@ -59,7 +59,10 @@ export class UserInfo extends Component {
             </tr>
 
             {this.state.changeEmail && (
-              <NewEmail onSubmit={this.onSubmit} />
+              <NewEmail
+                onSubmit={this.onSubmit}
+                user={this.props.user}
+              />
             )}
 
             <tr className="user__row">

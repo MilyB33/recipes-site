@@ -11,12 +11,6 @@ class Results extends React.Component {
     });
   };
 
-  componentDidUpdate() {
-    if (this.props.recipes.length > 0) {
-      this.props.endLoading();
-    }
-  }
-
   render() {
     return (
       <section className="browse__results">

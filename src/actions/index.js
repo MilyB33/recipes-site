@@ -16,7 +16,7 @@ import {
   LOGIN,
   LOGOUT,
   REGISTER,
-  TOGGLE_NAV,
+  START_LOADING,
   UNLIKE_RECIPE,
   UPDATE_ACCOUNT,
 } from './types';
@@ -27,9 +27,11 @@ export const fetchRecipes = (data) => (dispatch) =>
   _fetchRecipes(data, dispatch);
 
 const _fetchRecipes = _.memoize(async (data, dispatch) => {
+  dispatch({ type: START_LOADING });
+
   const { keyword, cuisine, mealType, diet, intolerances } = data;
 
-  let searchString = new String();
+  let searchString = '';
 
   keyword &&
     (searchString = searchString.concat(`&query=${keyword}`));
@@ -125,7 +127,6 @@ export const login = (user) => async (dispatch) => {
     localStorage.setItem('token', response.data.accessToken);
 
     user = await _loadUserInfo(localStorage.token);
-    console.log(user);
     dispatch({
       type: LOGIN,
       payload: {
@@ -143,6 +144,7 @@ export const login = (user) => async (dispatch) => {
 
 export const logout = () => (dispatch) => {
   localStorage.removeItem('token');
+
   dispatch({ type: LOGOUT });
 };
 
@@ -154,8 +156,11 @@ export const clearErrors = () => {
 
 export const deleteAccount = (id) => async (dispatch) => {
   await auth.delete(`600/users/${id}`);
+
   dispatch({ type: DELETE_ACCOUNT });
+
   history.push('/');
+
   localStorage.removeItem('token');
 };
 
@@ -167,7 +172,7 @@ const _loadUserInfo = async (token) => {
   const response = await auth.get(`400/users/${id}`);
 
   const likedRecipes = await auth.get(`640/info/${id}`);
-  console.log(likedRecipes);
+
   return {
     ..._.pick(response.data, ['email', 'username', 'id']),
     likedRecipes: likedRecipes.data.likedRecipes,
@@ -175,10 +180,7 @@ const _loadUserInfo = async (token) => {
 };
 
 export const updateAccount = (user, data) => async (dispatch) => {
-  const response = await auth.get(`users/${user.id}`);
-
-  await auth.put(`/users/${user.id}`, {
-    ...response.data,
+  await auth.patch(`/users/${user.id}`, {
     ...data,
   });
 

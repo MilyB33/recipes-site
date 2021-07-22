@@ -1,7 +1,7 @@
 import {
-  END_LOADING,
   FETCH_RECIPE,
   FETCH_RECIPES,
+  START_LOADING,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -16,17 +16,17 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         recipes: action.payload,
-        loading: true,
+        loading: false,
       };
     case FETCH_RECIPE:
       return {
         ...state,
         recipeInfo: action.payload,
       };
-    case END_LOADING:
+    case START_LOADING:
       return {
         ...state,
-        loading: false,
+        loading: true,
       };
     default:
       return state;

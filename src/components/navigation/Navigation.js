@@ -15,14 +15,20 @@ class Navigation extends React.Component {
   componentDidMount() {
     if (window.matchMedia('(min-width:800px)').matches)
       this.setState({ showNav: true });
+    else
+      history.listen(() => {
+        this.setState({ showNav: false });
+      });
 
     window
       .matchMedia('(min-width:800px)')
       .addEventListener('change', (event) => {
-        if (event.matches) this.setState({ showNav: true });
-        else {
+        if (event.matches) {
+          this.setState({ showNav: true });
+        } else {
           // When Url change close menu
           history.listen(() => {
+            if (event.matches) return;
             this.setState({ showNav: false });
           });
 

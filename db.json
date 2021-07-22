@@ -2,9 +2,15 @@
   "users": [
     {
       "email": "mily@gmail.com",
-      "password": "$2a$10$zi.wBlm0pZrk1W2n7u3Zk.jSx2jo2OtLm8HvEziLWfnvirKq5tA9O",
+      "password": "$2a$10$T1KbVnI07OjDsmmzKt9KFu6k368YsZRlop2TiEYTtPCsuu2hhDfWK",
       "username": "mily",
       "id": 1
+    },
+    {
+      "email": "jakis@gmail.com",
+      "password": "$2a$10$K/.oU8n72jXQISqyhA8YreoZggn32aBOCyK1YzRvsm.uX2/MnN2ma",
+      "username": "jakis",
+      "id": 2
     }
   ],
   "info": [
@@ -38,6 +44,10 @@
       ],
       "userId": 1,
       "id": 1
+    },
+    {
+      "likedRecipes": [],
+      "id": 2
     }
   ]
 }

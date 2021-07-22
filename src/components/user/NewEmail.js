@@ -12,6 +12,16 @@ class NewEmail extends Component {
   };
 
   onClick = () => {
+    if (this.state.email === this.props.user.email) {
+      console.log('Emails are same');
+      return;
+    }
+
+    if (this.state.email.length === 0) {
+      console.log('Field cant be empty');
+      return;
+    }
+
     this.props.onSubmit(this.state);
     this.setState({ email: '' });
   };
