@@ -86,8 +86,13 @@
 
 .map {
   width: 100%;
-  min-height: 30vh;
+  height: 30vh;
   background: grey;
+
+  &__frame {
+    width: inherit;
+    height: 100%;
+  }
 }
 
 .container--contact {

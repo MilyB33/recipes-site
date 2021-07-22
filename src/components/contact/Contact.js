@@ -1,10 +1,11 @@
 import React from 'react';
+import Map from './Map';
 
 const Contact = () => {
   return (
     <main className="container container--contact">
       <h1>How to find us</h1>
-      <div className="map"></div>
+      <Map />
       <p className="contact__description">
         Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque
         penatibus et magnis dis parturient montes, nascetur ridiculus
