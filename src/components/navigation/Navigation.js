@@ -6,10 +6,16 @@ import AccountLink from './AccountLink';
 import Socials from './Socials';
 import NavBtn from './NavBtn';
 import history from '../../history';
+import { slideIn, slideOut } from '../../animations/animations';
 
 class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+  }
+
   state = {
-    showNav: false,
+    visible: false,
   };
 
   componentDidMount() {
@@ -18,40 +24,51 @@ class Navigation extends React.Component {
     });
 
     if (window.matchMedia('(min-width:800px)').matches)
-      this.setState({ showNav: true });
+      this.setState({ visible: true });
     else
       history.listen(() => {
-        this.setState({ showNav: false });
+        this.setState({ visible: false });
       });
 
     window
       .matchMedia('(min-width:800px)')
       .addEventListener('change', (event) => {
         if (event.matches) {
-          this.setState({ showNav: true });
+          this.setState({ visible: true });
         } else {
           // When Url change close menu
           history.listen(() => {
             if (event.matches) return;
-            this.setState({ showNav: false });
+            this.setState({ visible: false });
           });
 
-          this.setState({ showNav: false });
+          this.setState({ visible: false });
         }
       });
   }
 
   toggleNav = () => {
-    this.setState({ showNav: !this.state.showNav });
+    if (this.state.visible) {
+      slideOut(this.ref.current, () => {
+        this.setState({ visible: !this.state.visible });
+      });
+    } else {
+      this.setState({ visible: !this.state.visible });
+    }
   };
+
+  componentDidUpdate() {
+    if (this.state.visible && window.innerWidth < 800)
+      slideIn(this.ref.current);
+  }
 
   render() {
     return (
       <Fragment>
         <NavBtn onClick={this.toggleNav} />
 
-        {this.state.showNav && (
-          <nav className="navigation">
+        {this.state.visible && (
+          <nav className="navigation" ref={this.ref}>
             <Link to="/" className="logo__link">
               <img
                 src="../../static/food-serving.png"

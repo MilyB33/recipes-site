@@ -8,11 +8,28 @@ export const cardAnimation = (element) => {
   });
 };
 
-export const slideOnLoad = (element) => {
+export const slideIn = (element) => {
   gsap.fromTo(
     element,
-    { x: -window.innerWidth },
-    { x: 0, duration: 1 }
+    { x: -element.clientWidth },
+    { x: 0, duration: 1, ease: 'back.out(1.7)' }
+  );
+};
+
+export const slideOut = (element, callback) => {
+  gsap.to(element, {
+    x: -element.clientWidth,
+    duration: 0.5,
+    onComplete: callback,
+  });
+};
+
+export const slideOnLoad = (element) => {
+  console.log(element.clientWidth);
+  gsap.fromTo(
+    element,
+    { x: -element.clientWidth },
+    { x: 0, duration: 1.5, ease: 'bounce.out' }
   );
 };
 
