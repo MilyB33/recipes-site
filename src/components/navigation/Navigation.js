@@ -13,6 +13,10 @@ class Navigation extends React.Component {
   };
 
   componentDidMount() {
+    history.listen(() => {
+      window.scrollTo(0, 0);
+    });
+
     if (window.matchMedia('(min-width:800px)').matches)
       this.setState({ showNav: true });
     else
