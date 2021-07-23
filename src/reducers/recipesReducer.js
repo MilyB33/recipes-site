@@ -10,6 +10,7 @@ const INITIAL_STATE = {
   loading: false,
 };
 
+// eslint-disable-next-line
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_RECIPES:

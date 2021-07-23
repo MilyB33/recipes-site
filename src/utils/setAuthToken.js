@@ -1,4 +1,3 @@
-import axios from 'axios';
 import auth from '../api/auth';
 
 const setAuthToken = (token) => {

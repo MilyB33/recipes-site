@@ -10,6 +10,7 @@ import RecipeInfo from './recipe/RecipeInfo';
 import AccountAccess from './account/AccountAcces';
 import User from './user/User';
 import history from '../history';
+import ScrollBtn from './layout/ScrollBtn';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/account/:username" component={User} />
         </Switch>
         <Footer />
+        <ScrollBtn />
       </Router>
     </div>
   );

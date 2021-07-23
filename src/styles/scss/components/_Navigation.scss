@@ -83,6 +83,14 @@
     justify-content: initial;
     margin-left: auto;
   }
+
+  &__link > i {
+    transition: 0.3s;
+  }
+
+  &__link:hover > i {
+    transform: rotate(20deg);
+  }
 }
 
 .link--user {

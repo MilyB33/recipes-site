@@ -8,6 +8,7 @@ import {
   diets,
   intolerances,
 } from '../../static/data';
+import _ from 'lodash';
 
 class BrowseForm extends React.Component {
   state = {
@@ -28,10 +29,15 @@ class BrowseForm extends React.Component {
     if (cuisines.includes(param)) {
       this.setState({ cuisine: param });
     }
+
+    console.log(param);
+
+    // this.props.fetchRecipes(this.state);
   }
 
   componentDidUpdate() {
-    // this.props.fetchRecipes(this.state);
+    if (this.props.recipes.lenght > 0)
+      this.props.fetchRecipes(this.state);
   }
 
   getRecipes() {
@@ -41,7 +47,6 @@ class BrowseForm extends React.Component {
   }
 
   onInputChange = (field, value) => {
-    console.log(field, value);
     this.setState({ [field]: value === 'any' ? '' : value });
   };
 

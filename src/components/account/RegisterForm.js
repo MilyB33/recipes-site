@@ -8,7 +8,7 @@ const RegisterForm = ({ onVisibilityChange, register, error }) => {
     username: '',
     email: '',
     password: '',
-    ['confirm-password']: '',
+    'confirm-password': '',
     inputError: null,
   });
 
@@ -27,7 +27,7 @@ const RegisterForm = ({ onVisibilityChange, register, error }) => {
         username: '',
         email: '',
         password: '',
-        ['confirm-password']: '',
+        'confirm-password': '',
       });
     } else {
       setUser({ ...user, inputError: `Passwords aren't identical` });

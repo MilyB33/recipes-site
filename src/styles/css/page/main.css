@@ -429,6 +429,19 @@ input {
   }
 }
 
+.scrollBtn {
+  border: none;
+  color: #f8f9fa;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 1.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background: #ef233c;
+  cursor: pointer;
+}
+
 .navigation {
   display: flex;
   flex-direction: column;
@@ -513,6 +526,12 @@ input {
     justify-content: initial;
     margin-left: auto;
   }
+}
+.socials__link > i {
+  transition: 0.3s;
+}
+.socials__link:hover > i {
+  transform: rotate(20deg);
 }
 
 .link--user {

@@ -17,6 +17,7 @@ const INITIAL_STATE = {
   error: null,
 };
 
+// eslint-disable-next-line
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case LOGIN:

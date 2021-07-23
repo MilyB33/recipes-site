@@ -30,6 +30,7 @@ const _fetchRecipes = _.memoize(async (data, dispatch) => {
   dispatch({ type: START_LOADING });
 
   const { keyword, cuisine, mealType, diet, intolerances } = data;
+  console.log(data);
 
   let searchString = '';
 

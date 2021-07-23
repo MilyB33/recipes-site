@@ -10,6 +10,7 @@ class Map extends Component {
     return (
       <div className="map" ref={this.ref}>
         <iframe
+          title="map"
           className="map__frame"
           style={{ border: '0' }}
           loading="lazy"

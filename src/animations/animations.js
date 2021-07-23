@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 export const cardAnimation = (element) => {
   gsap.to(element, {
@@ -31,4 +32,21 @@ export const slideOnVisibility = (element) => {
   }, settings);
 
   observer.observe(element);
+};
+
+export const restoreScroll = () => {
+  gsap.registerPlugin(ScrollToPlugin);
+
+  gsap.to(window, { scrollTo: { y: 0 } });
+};
+
+export const scrollFadeIn = (element) => {
+  gsap.fromTo(
+    element,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 2,
+    }
+  );
 };

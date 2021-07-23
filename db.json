@@ -11,6 +11,12 @@
       "password": "$2a$10$K/.oU8n72jXQISqyhA8YreoZggn32aBOCyK1YzRvsm.uX2/MnN2ma",
       "username": "jakis",
       "id": 2
+    },
+    {
+      "email": "kolejny@gmail.com",
+      "password": "$2a$10$hTK3EH.p1hTMVDH12Z3DXOjkJ.BaQ19ogspWAnpPpTLyobszBArwu",
+      "username": "kolejny",
+      "id": 3
     }
   ],
   "info": [
@@ -48,6 +54,10 @@
     {
       "likedRecipes": [],
       "id": 2
+    },
+    {
+      "likedRecipes": [],
+      "id": 3
     }
   ]
 }

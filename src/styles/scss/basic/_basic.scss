@@ -109,3 +109,16 @@ input {
 //     font-size: 1.3em;
 //   }
 // }
+
+.scrollBtn {
+  border: none;
+  color: $clr-light-100;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 1.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background: $clr-additional-100;
+  cursor: pointer;
+}
