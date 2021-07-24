@@ -72,10 +72,10 @@ const RegisterForm = ({ onVisibilityChange, register, error }) => {
         required
       />
 
-      <label htmlFor="register-email">Email :</label>
+      <label htmlFor="email">Email :</label>
       <input
         type="email"
-        id="register-email"
+        id="email"
         name="email"
         className="account__input"
         autoComplete="off"
@@ -84,10 +84,10 @@ const RegisterForm = ({ onVisibilityChange, register, error }) => {
         required
       />
 
-      <label htmlFor="register-password">Password :</label>
+      <label htmlFor="password">Password :</label>
       <input
         type="password"
-        id="register-password"
+        id="password"
         name="password"
         className="account__input"
         onChange={onChange}

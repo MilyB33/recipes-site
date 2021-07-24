@@ -41,7 +41,7 @@ export const mealTypes = [
   'Beverage',
   'Sauce',
   'Marinade',
-  'Fingerfood',
+  'FingerFood',
   'Snack',
   'Drink',
 ];

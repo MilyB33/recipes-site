@@ -87,6 +87,25 @@ export const unlikeRecipe =
 
 // USERS ACTIONS
 
+export const getUser = () => async (dispatch) => {
+  try {
+    if (localStorage.token) {
+      const user = await _loadUserInfo(localStorage.token);
+
+      dispatch({
+        type: LOGIN,
+        payload: {
+          token: localStorage.token,
+          user,
+        },
+      });
+    } else return;
+  } catch (err) {
+    console.error(err.message);
+    localStorage.removeItem('token');
+  }
+};
+
 export const register = (user) => async (dispatch) => {
   try {
     const response = await auth.post(
