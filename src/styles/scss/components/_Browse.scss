@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   gap: 1em;
   padding: 1rem;
+  font-family: $font-additional-100;
 
   &__box {
     display: flex;
@@ -25,6 +26,7 @@
   justify-content: space-around;
   gap: 1.5em;
   min-height: 50vh;
+  font-family: $font-additional-100;
 
   @media (min-width: 1000px) {
     gap: 2.5em;

@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 :root {
-  font-family: $font-primary;
+  font-family: $font-additional-200;
   color: $clr-light-100;
 }
 
@@ -96,7 +96,7 @@ input {
   font-size: 12px;
 
   @media (min-width: 1150px) {
-    font-size: initial;
+    font-size: 16px;
   }
 }
 

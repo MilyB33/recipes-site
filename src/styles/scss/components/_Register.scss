@@ -5,15 +5,20 @@
   gap: 2em;
   align-items: center;
   justify-content: center;
-  padding: 1em 10em;
+  padding: 1em 5em;
   min-height: 75vh;
+  font-family: $font-primary;
+
+  @media (min-width: 500px) {
+    padding: 1em 10em;
+  }
 
   &__form {
     position: relative;
     display: grid;
     gap: 1em;
     background: $clr-light-100;
-    padding: 2em 1em;
+    padding: 2em 2em;
     color: $clr-dark-200;
     box-shadow: 6px 6px 1px $clr-additional-200;
     border: 1px solid $clr-dark-200;
