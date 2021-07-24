@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import NavLink from './NavLink';
 import RegLink from './RegLink';
@@ -7,6 +8,7 @@ import Socials from './Socials';
 import NavBtn from './NavBtn';
 import history from '../../history';
 import { slideIn, slideOut } from '../../animations/animations';
+import { getUser } from '../../actions';
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class Navigation extends React.Component {
   };
 
   componentDidMount() {
+    this.props.getUser();
     history.listen(() => {
       window.scrollTo(0, 0);
     });
@@ -94,4 +97,4 @@ class Navigation extends React.Component {
   }
 }
 
-export default Navigation;
+export default connect(null, { getUser })(Navigation);

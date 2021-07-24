@@ -48,7 +48,7 @@ const LogInForm = ({ onVisibilityChange, error, login }) => {
       <label htmlFor="password">Password :</label>
       <input
         type="password"
-        id="login-password"
+        id="password"
         className="account__input"
         name="password"
         onChange={onChange}

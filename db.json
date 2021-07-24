@@ -1,12 +1,15 @@
 {
   "users": [
     {
+<<<<<<< HEAD
       "email": "mily2@gmail.com",
       "password": "$2a$10$T1KbVnI07OjDsmmzKt9KFu6k368YsZRlop2TiEYTtPCsuu2hhDfWK",
       "username": "mily",
       "id": 1
     },
     {
+=======
+>>>>>>> fixes
       "email": "jakis@gmail.com",
       "password": "$2a$10$K/.oU8n72jXQISqyhA8YreoZggn32aBOCyK1YzRvsm.uX2/MnN2ma",
       "username": "jakis",
@@ -21,6 +24,7 @@
   ],
   "info": [
     {
+<<<<<<< HEAD
       "likedRecipes": [
         {
           "id": 648506,
@@ -47,6 +51,8 @@
       "id": 1
     },
     {
+=======
+>>>>>>> fixes
       "likedRecipes": [],
       "id": 2
     },
