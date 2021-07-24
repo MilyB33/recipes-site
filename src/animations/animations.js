@@ -67,3 +67,17 @@ export const scrollFadeIn = (element) => {
     }
   );
 };
+
+export const bounceOnClick = (element, callback) => {
+  const tl = gsap.timeline({ onComplete: () => callback });
+  tl.to(element, {
+    css: { scaleX: 1.2, scaleY: 1.2 },
+    duration: 0.2,
+  });
+  tl.to(element, {
+    css: {
+      scaleX: 1,
+      scaleY: 1,
+    },
+  });
+};
