@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +7,7 @@ const Tags = ({ diets, dishTypes, cuisines }) => {
   const renderList = () => {
     const type = _.concat(diets, dishTypes, cuisines);
 
-    return type?.map((name, index) => {
+    return type.map((name, index) => {
       return (
         <Link key={index} to={`/browse/${name}`}>
           <p className="recipe__tags__list__item">{name}</p>
@@ -21,6 +22,12 @@ const Tags = ({ diets, dishTypes, cuisines }) => {
       <div className="recipe__tags__list">{renderList()}</div>
     </article>
   );
+};
+
+Tags.propTypes = {
+  diets: PropTypes.array,
+  dishTypes: PropTypes.array,
+  cuisines: PropTypes.array,
 };
 
 Tags.defaultProps = {

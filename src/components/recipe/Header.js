@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Liked from './Liked';
 import { connect } from 'react-redux';
 
@@ -16,6 +17,11 @@ const Header = ({ recipe, isAuthenticated }) => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  recipe: PropTypes.object,
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {

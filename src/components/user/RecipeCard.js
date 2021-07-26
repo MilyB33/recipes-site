@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Link } from 'react-router-dom';
 import { unlikeRecipe } from '../../actions';
 import { connect } from 'react-redux';
@@ -22,6 +24,17 @@ const RecipeCard = ({ recipe, unlikeRecipe, recipes, userId }) => {
       </Link>
     </article>
   );
+};
+
+RecipeCard.propTypes = {
+  recipe: PropTypes.object,
+  unlikeRecipe: PropTypes.func.isRequired,
+  recipes: PropTypes.array,
+  userId: PropTypes.number,
+};
+
+RecipeCard.defaultProps = {
+  recipes: [],
 };
 
 const mapStateToProps = (state) => {

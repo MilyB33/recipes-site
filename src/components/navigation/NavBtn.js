@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 const NavBtn = ({ onClick }) => {
@@ -8,6 +9,10 @@ const NavBtn = ({ onClick }) => {
     </button>,
     document.querySelector('#navBtn')
   );
+};
+
+NavBtn.propTypes = {
+  onClick: PropTypes.func.isRequired,
 };
 
 export default NavBtn;

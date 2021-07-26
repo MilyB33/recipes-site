@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 const CategoryItem = ({ name }) => {
   return (
@@ -8,6 +9,10 @@ const CategoryItem = ({ name }) => {
       </Link>
     </li>
   );
+};
+
+CategoryItem.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default CategoryItem;

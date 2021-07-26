@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { register } from '../../actions';
 import Error from '../layout/Error';
@@ -112,6 +113,12 @@ const RegisterForm = ({ onVisibilityChange, register, error }) => {
       </button>
     </form>
   );
+};
+
+RegisterForm.propTypes = {
+  onVisibilityChange: PropTypes.func.isRequired,
+  error: PropTypes.string,
+  register: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {

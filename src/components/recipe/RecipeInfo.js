@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchRecipeInformation } from '../../actions';
 import Ingredients from './Ingredients';
@@ -36,6 +37,11 @@ class RecipeInfo extends Component {
     );
   }
 }
+
+RecipeInfo.propTypes = {
+  fetchRecipeInformation: PropTypes.func.isRequired,
+  recipeInfo: PropTypes.object,
+};
 
 const mapStateToProps = (state) => {
   return { recipeInfo: state.recipes.recipeInfo };

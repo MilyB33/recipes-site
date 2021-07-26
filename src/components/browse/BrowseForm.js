@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchRecipes } from '../../actions';
 import SelectItem from './SelectItem';
@@ -102,6 +103,15 @@ class BrowseForm extends React.Component {
     );
   }
 }
+
+BrowseForm.propTypes = {
+  recipes: PropTypes.array,
+  fetchRecipes: PropTypes.func.isRequired,
+};
+
+BrowseForm.defaultProps = {
+  recipes: [],
+};
 
 const mapStateToProps = (state) => {
   return { recipes: state.recipes.recipes };

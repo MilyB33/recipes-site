@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { endLoading } from '../../actions';
 import Recipe from './Recipe';
 import { BarLoader } from 'react-spinners';
 
@@ -20,6 +20,15 @@ class Results extends React.Component {
   }
 }
 
+Results.propTypes = {
+  recipes: PropTypes.array,
+  loading: PropTypes.bool,
+};
+
+Results.defaultProps = {
+  recipes: [],
+};
+
 const mapStateToProps = (state) => {
   return {
     recipes: state.recipes.recipes,
@@ -27,4 +36,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { endLoading })(Results);
+export default connect(mapStateToProps, null)(Results);

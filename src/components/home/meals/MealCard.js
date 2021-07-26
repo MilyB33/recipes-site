@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { slideOnVisibility } from '../../../animations/animations';
 const MealCard = ({ url, type, className }) => {
@@ -26,6 +27,12 @@ const MealCard = ({ url, type, className }) => {
       </Link>
     </article>
   );
+};
+
+MealCard.propTypes = {
+  url: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default MealCard;

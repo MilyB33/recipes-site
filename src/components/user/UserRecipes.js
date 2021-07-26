@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
 import RecipeCard from './RecipeCard';
+
 const UserRecipes = ({ recipes }) => {
   const renderCards = () => {
     return recipes?.map((recipe) => {
@@ -10,6 +11,14 @@ const UserRecipes = ({ recipes }) => {
   };
 
   return <section className="user__recipes">{renderCards()}</section>;
+};
+
+UserRecipes.propTypes = {
+  recipes: PropTypes.array,
+};
+
+UserRecipes.defaultProps = {
+  recipes: [],
 };
 
 const mapStateToProps = (state) => {

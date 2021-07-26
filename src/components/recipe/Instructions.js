@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class Instructions extends Component {
@@ -22,6 +23,10 @@ class Instructions extends Component {
     );
   }
 }
+
+Instructions.propTypes = {
+  recipe: PropTypes.object,
+};
 
 const mapStateToProps = (state) => {
   return { recipe: state.recipes.recipeInfo };

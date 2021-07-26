@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { cardAnimation } from '../../animations/animations';
 
@@ -21,6 +22,10 @@ const Recipe = ({ recipe }) => {
       </Link>
     </article>
   );
+};
+
+Recipe.propsTypes = {
+  recipe: PropTypes.object.isRequired,
 };
 
 export default Recipe;

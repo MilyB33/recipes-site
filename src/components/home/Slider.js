@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import { sliderPaths } from '../../static/data';
 import { slideOnLoad } from '../../animations/animations';
@@ -6,7 +7,7 @@ import SliderItem from './SliderItem';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const SliderGalery = ({ text }) => {
+const SliderGallery = ({ text }) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -41,4 +42,12 @@ const SliderGalery = ({ text }) => {
   );
 };
 
-export default SliderGalery;
+SliderGallery.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
+SliderGallery.defaultProps = {
+  text: 'Welcome to our Site',
+};
+
+export default SliderGallery;

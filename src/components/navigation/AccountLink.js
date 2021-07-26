@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -17,6 +18,11 @@ const AccountLink = ({ username, isAuthenticated }) => {
       )}
     </Fragment>
   );
+};
+
+AccountLink.propTypes = {
+  username: PropTypes.string,
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {

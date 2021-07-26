@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SliderItem = ({ url }) => {
   return (
@@ -10,6 +11,10 @@ const SliderItem = ({ url }) => {
       />
     </div>
   );
+};
+
+SliderItem.propTypes = {
+  url: PropTypes.string.isRequired,
 };
 
 export default SliderItem;

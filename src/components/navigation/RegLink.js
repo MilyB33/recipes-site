@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../../actions';
@@ -21,6 +22,11 @@ const RegLink = ({ logout, isAuthenticated }) => {
       )}
     </li>
   );
+};
+
+RegLink.propTypes = {
+  logout: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {

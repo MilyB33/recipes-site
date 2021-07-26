@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { updateAccount } from '../../actions';
 import NewEmail from './NewEmail';
@@ -94,6 +96,12 @@ export class UserInfo extends Component {
     );
   }
 }
+
+UserInfo.propTypes = {
+  updateAccount: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
+  user: PropTypes.object,
+};
 
 const mapStateToProps = (state) => {
   return { user: state.auth.user };

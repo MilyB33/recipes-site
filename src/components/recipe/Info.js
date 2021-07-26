@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import _ from 'lodash';
 
 const Info = ({ recipe }) => {
@@ -58,6 +60,10 @@ const Info = ({ recipe }) => {
       </tbody>
     </table>
   );
+};
+
+Info.propTypes = {
+  recipe: PropTypes.object,
 };
 
 export default Info;

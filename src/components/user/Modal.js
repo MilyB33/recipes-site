@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteAccount } from '../../actions';
 
@@ -20,6 +21,12 @@ const Modal = ({ onClick, deleteAccount, user }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  deleteAccount: PropTypes.func.isRequired,
+  user: PropTypes.object,
 };
 
 const mapStateToProps = (state) => {

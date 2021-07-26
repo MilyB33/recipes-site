@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NewEmail extends Component {
   state = {
@@ -49,5 +50,10 @@ class NewEmail extends Component {
     );
   }
 }
+
+NewEmail.propTypes = {
+  user: PropTypes.object,
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default NewEmail;

@@ -1,4 +1,5 @@
 import React, { Fragment, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { likeRecipe, unlikeRecipe } from '../../actions';
 import { bounceOnClick } from '../../animations/animations';
@@ -13,6 +14,7 @@ const Liked = ({
   const ref = useRef(null);
 
   const unlike = () => {
+    console.log(typeof recipe.id);
     bounceOnClick(
       ref.current,
       unlikeRecipe(recipe.id, userId, likedRecipes)
@@ -51,6 +53,18 @@ const Liked = ({
       )}
     </Fragment>
   );
+};
+
+Liked.propTypes = {
+  userId: PropTypes.number,
+  likeRecipe: PropTypes.func.isRequired,
+  recipe: PropTypes.object,
+  likedRecipes: PropTypes.array,
+  unlikeRecipe: PropTypes.func.isRequired,
+};
+
+Liked.defaultProps = {
+  likedRecipes: [],
 };
 
 const mapStateToProps = (state) => {

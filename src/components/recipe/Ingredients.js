@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Ingredients = ({ ingredients }) => {
   const renderIngredientsList = () => {
@@ -35,6 +36,14 @@ const Ingredients = ({ ingredients }) => {
       </tbody>
     </table>
   );
+};
+
+Ingredients.propTypes = {
+  ingredients: PropTypes.array,
+};
+
+Ingredients.defaultProps = {
+  ingredients: [],
 };
 
 export default Ingredients;

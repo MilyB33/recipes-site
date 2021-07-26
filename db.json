@@ -9,7 +9,29 @@
   ],
   "info": [
     {
-      "likedRecipes": [],
+      "likedRecipes": [
+        {
+          "id": 715392,
+          "title": "Chicken Tortilla Soup (Slow Cooker)",
+          "image": "https://spoonacular.com/recipeImages/715392-556x370.jpg"
+        },
+        {
+          "id": 716426,
+          "title": "Cauliflower, Brown Rice, and Vegetable Fried Rice",
+          "image": "https://spoonacular.com/recipeImages/716426-556x370.jpg"
+        },
+        {
+          "id": 716627,
+          "title": "Easy Homemade Rice and Beans",
+          "image": "https://spoonacular.com/recipeImages/716627-556x370.jpg"
+        },
+        {
+          "id": 729366,
+          "title": "Plantain Salad",
+          "image": "https://spoonacular.com/recipeImages/729366-556x370.jpg"
+        }
+      ],
+      "userId": 3,
       "id": 3
     }
   ]

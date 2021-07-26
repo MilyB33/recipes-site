@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const NavLinks = ({ url, text }) => {
@@ -9,6 +10,11 @@ const NavLinks = ({ url, text }) => {
       </Link>
     </li>
   );
+};
+
+NavLinks.propTypes = {
+  url: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default NavLinks;
