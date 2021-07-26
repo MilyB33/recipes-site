@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "email": "jakis@gmail.com",
-      "password": "$2a$10$K/.oU8n72jXQISqyhA8YreoZggn32aBOCyK1YzRvsm.uX2/MnN2ma",
-      "username": "jakis",
-      "id": 2
-    },
-    {
       "email": "kolejny@gmail.com",
       "password": "$2a$10$hTK3EH.p1hTMVDH12Z3DXOjkJ.BaQ19ogspWAnpPpTLyobszBArwu",
       "username": "kolejny",
@@ -14,27 +8,6 @@
     }
   ],
   "info": [
-    {
-      "likedRecipes": [
-        {
-          "id": 715594,
-          "title": "Homemade Garlic and Basil French Fries",
-          "image": "https://spoonacular.com/recipeImages/715594-556x370.jpg"
-        },
-        {
-          "id": 794349,
-          "title": "Broccoli and Chickpea Rice Salad",
-          "image": "https://spoonacular.com/recipeImages/794349-556x370.jpg"
-        },
-        {
-          "id": 715446,
-          "title": "Slow Cooker Beef Stew",
-          "image": "https://spoonacular.com/recipeImages/715446-556x370.jpg"
-        }
-      ],
-      "userId": 2,
-      "id": 2
-    },
     {
       "likedRecipes": [],
       "id": 3
