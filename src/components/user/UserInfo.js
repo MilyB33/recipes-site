@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteAccount, updateAccount } from '../../actions';
+import { updateAccount } from '../../actions';
 import NewEmail from './NewEmail';
 import NewPassword from './NewPassword';
 
@@ -16,11 +16,6 @@ export class UserInfo extends Component {
     this.setState({
       [event.target.name]: !this.state[event.target.name],
     });
-  };
-
-  onDeleteAccount = (event) => {
-    event.preventDefault();
-    this.props.deleteAccount(this.props.user.id);
   };
 
   onSubmit = (data) => {
@@ -87,7 +82,7 @@ export class UserInfo extends Component {
               <td>
                 <button
                   className="button button--danger"
-                  onClick={this.onDeleteAccount}
+                  onClick={this.props.onClick}
                 >
                   Delete Account
                 </button>
@@ -105,6 +100,5 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  deleteAccount,
   updateAccount,
 })(UserInfo);

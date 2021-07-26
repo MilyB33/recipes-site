@@ -1,18 +1,6 @@
 {
   "users": [
     {
-      "email": "mily2@gmail.com",
-      "password": "$2a$10$T1KbVnI07OjDsmmzKt9KFu6k368YsZRlop2TiEYTtPCsuu2hhDfWK",
-      "username": "mily",
-      "id": 1
-    },
-    {
-      "email": "jakis@gmail.com",
-      "password": "$2a$10$K/.oU8n72jXQISqyhA8YreoZggn32aBOCyK1YzRvsm.uX2/MnN2ma",
-      "username": "jakis",
-      "id": 2
-    },
-    {
       "email": "kolejny@gmail.com",
       "password": "$2a$10$hTK3EH.p1hTMVDH12Z3DXOjkJ.BaQ19ogspWAnpPpTLyobszBArwu",
       "username": "kolejny",
@@ -20,36 +8,6 @@
     }
   ],
   "info": [
-    {
-      "likedRecipes": [
-        {
-          "id": 648506,
-          "title": "Japanese Sushi",
-          "image": "https://spoonacular.com/recipeImages/648506-556x370.jpg"
-        },
-        {
-          "id": 716408,
-          "title": "Greek-Style Baked Fish: Fresh, Simple, and Delicious",
-          "image": "https://spoonacular.com/recipeImages/716408-556x370.jpg"
-        },
-        {
-          "id": 640941,
-          "title": "Crunchy Brussels Sprouts Side Dish",
-          "image": "https://spoonacular.com/recipeImages/640941-556x370.jpg"
-        },
-        {
-          "id": 756814,
-          "title": "Powerhouse Almond Matcha Superfood Smoothie",
-          "image": "https://spoonacular.com/recipeImages/756814-556x370.jpg"
-        }
-      ],
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "likedRecipes": [],
-      "id": 2
-    },
     {
       "likedRecipes": [],
       "id": 3
