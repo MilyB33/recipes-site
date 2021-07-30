@@ -9,6 +9,10 @@
   padding: 1rem 2rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .app {
   min-height: 95vh;
   display: flex;
@@ -121,4 +125,21 @@ input {
   font-size: 1.5rem;
   background: $clr-additional-100;
   cursor: pointer;
+}
+
+// SCROLLBAR
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba($clr-additional-100, 0.5);
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $clr-additional-100;
 }

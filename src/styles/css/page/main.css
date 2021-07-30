@@ -347,6 +347,10 @@ template {
   padding: 1rem 2rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .app {
   min-height: 95vh;
   display: flex;
@@ -440,6 +444,21 @@ input {
   font-size: 1.5rem;
   background: #ef233c;
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(239, 35, 60, 0.5);
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ef233c;
 }
 
 .navigation {
