@@ -9,9 +9,9 @@
   gap: 6em;
   align-items: center;
   z-index: 800;
-  background: $clr-dark-100;
+  background: $clr-light-200;
   padding: 0.5rem;
-
+  border-radius: 0 0 15px 15px;
   width: 100vw;
   height: 100vh;
 
@@ -22,7 +22,7 @@
 
   @media (min-width: 800px) {
     border-right: none;
-    border-bottom: 4px dashed $clr-additional-100;
+    border-bottom: 4px solid $clr-additional-100;
     position: sticky;
     flex-direction: row;
     width: initial;

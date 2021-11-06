@@ -2,7 +2,6 @@
 
 :root {
   font-family: $font-additional-200;
-  color: $clr-light-100;
 }
 
 #root {
@@ -28,13 +27,13 @@ html {
 }
 
 body {
-  background: $clr-dark-100;
+  background: $clr-light-200;
 }
 
 // LINKS
 
 a {
-  color: $clr-light-100;
+  color: $clr-dark-100;
   text-decoration: none;
 }
 

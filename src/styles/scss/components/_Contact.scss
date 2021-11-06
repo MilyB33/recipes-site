@@ -59,11 +59,12 @@
   &__input {
     padding: 1rem;
     background: none;
-    border: 1px solid $clr-light-200;
-    color: $clr-light-100;
+    background: rgba($clr-additional-200, 1);
+    border: 1px solid $clr-dark-100;
+    color: $clr-light-200;
 
     &::placeholder {
-      color: $clr-light-100;
+      color: $clr-light-200;
     }
   }
 }
