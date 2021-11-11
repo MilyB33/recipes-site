@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'http://localhost:3001',
+  baseURL: 'https://json-server-private.herokuapp.com',
   headers: {
     post: {
       // eslint-disable-next-line

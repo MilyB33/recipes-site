@@ -142,8 +142,8 @@ export const register = (user) => async (dispatch) => {
 
 export const login = (user) => async (dispatch) => {
   try {
+    console.log(user);
     const response = await auth.post('/login', JSON.stringify(user));
-
     localStorage.setItem('token', response.data.accessToken);
 
     user = await _loadUserInfo(localStorage.token);
