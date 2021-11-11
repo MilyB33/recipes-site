@@ -29,14 +29,14 @@
   }
 
   &__form {
-    margin-top: 2rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
 
     &__grid {
       margin-top: 1rem;
       display: grid;
-      gap: 1rem;
+      gap: 2rem;
 
       @media (min-width: 800px) {
         grid-template-columns: 1fr 1fr;
@@ -59,19 +59,15 @@
   &__input {
     padding: 1rem;
     background: none;
-    background: rgba($clr-additional-200, 1);
+    border-radius: 5px;
     border: 1px solid $clr-dark-100;
-    color: $clr-light-200;
-
-    &::placeholder {
-      color: $clr-light-200;
-    }
   }
 }
 
 .button--contact {
   background: none;
-  box-shadow: none;
+  margin: 0 auto;
+  padding: 1rem;
 
   color: $clr-additional-200;
 
@@ -81,7 +77,7 @@
   }
 
   &:hover {
-    background: none;
+    background: rgba($clr-additional-200, 0.3);
   }
 }
 

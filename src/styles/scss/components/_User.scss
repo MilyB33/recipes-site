@@ -1,26 +1,16 @@
 @use '../abstracts/' as *;
 
 .user {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2em;
-  min-height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr;
   text-align: center;
-  padding: 2rem 2rem;
-  margin-bottom: 2rem;
   font-family: $font-primary;
+  margin-top: 2rem;
+  gap: 5em;
 
   @media (min-width: 600px) {
     padding: 2rem 6rem;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 0 6rem;
-    flex-wrap: nowrap;
-    gap: 5em;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: 1300px) {
@@ -33,6 +23,7 @@
     background: $clr-light-100;
     padding: 0.5em;
     color: $clr-dark-100;
+    height: min-content;
 
     @media (min-width: 400px) {
       padding: 1em;
@@ -64,48 +55,35 @@
 
   &__recipes {
     display: grid;
-    max-width: initial;
-    min-height: 30rem;
+    height: min-content;
+    grid-template-columns: repeat(2, 1fr);
 
-    @media (min-width: 400px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    gap: 1rem;
 
     @media (min-width: 700px) {
       grid-template-columns: repeat(3, 1fr);
     }
-
-    @media (min-width: 900px) {
-      max-width: 60%;
-    }
-
-    @media (min-width: 1300px) {
-      max-width: 40%;
-    }
   }
 
   &__recipe__card {
-    height: 15rem;
     position: relative;
-    background: $clr-additional-100;
-    padding: 0 0 1rem 0;
-    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
 
-    &:nth-child(even) {
-      background: $clr-additional-300;
-    }
+    gap: 2rem;
+    box-shadow: 1px 1px 4px black;
+    transition: 0.5s;
+    padding-bottom: 1rem;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
       z-index: 2;
     }
   }
 
   &__recipe__unlike {
     font-size: 1.5rem;
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    color: $clr-additional-200;
     cursor: pointer;
   }
 
@@ -114,17 +92,17 @@
   }
 
   &__recipe__link {
-    position: absolute;
-    display: inline-block;
-    bottom: 0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
+    transition: 0.3s;
+
+    &:hover {
+      color: $clr-additional-200;
+    }
   }
 
   &__recipe__image {
     width: 100%;
+
     margin: 0 auto 1rem auto;
-    height: 7rem;
 
     & > img {
       width: inherit;
@@ -148,10 +126,13 @@
   display: grid;
   place-items: center;
   position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 110vh;
-  z-index: 9999;
+  z-index: 3;
   background: rgba($clr-dark-200, 0.8);
+  color: $clr-light-100;
 
   &__box {
     max-width: 30rem;

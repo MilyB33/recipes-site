@@ -12,7 +12,7 @@ export const slideIn = (element) => {
   gsap.fromTo(
     element,
     { x: -element.clientWidth },
-    { x: 0, duration: 1, ease: 'back.out(1.7)' }
+    { x: 0, duration: 1, ease: 'power2.out' }
   );
 };
 

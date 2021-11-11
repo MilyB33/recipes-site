@@ -59,6 +59,7 @@ class BrowseForm extends React.Component {
             className="input--browse"
             type="text"
             id="keyword"
+            placeholder="Keyword"
             onChange={(e) =>
               this.onInputChange('keyword', e.target.value)
             }

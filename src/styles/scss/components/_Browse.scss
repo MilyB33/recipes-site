@@ -23,9 +23,8 @@
   margin: 1rem 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   gap: 1.5em;
-  min-height: 50vh;
   font-family: $font-additional-100;
 
   @media (min-width: 1000px) {
@@ -34,7 +33,8 @@
 }
 
 .button--browse {
-  margin-top: 1rem;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
 }
 
 .recipe__card {
@@ -72,16 +72,20 @@
 
 .input--browse {
   padding: 1ch;
-  background: rgba($clr-additional-100, 0.5);
+  background: rgba($clr-dark-100, 0.8);
   border-radius: 5px;
   color: $clr-light-100;
   border: none;
+
+  &::placeholder {
+    color: $clr-light-100;
+  }
 
   &::-webkit-scrollbar {
     display: none;
   }
 
   &:focus {
-    background: rgba($clr-additional-100, 0.8);
+    background: rgba($clr-dark-100, 0.6);
   }
 }

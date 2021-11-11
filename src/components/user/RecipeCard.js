@@ -10,18 +10,20 @@ const RecipeCard = ({ recipe, unlikeRecipe, recipes, userId }) => {
 
   return (
     <article className="user__recipe__card">
-      <i
-        className="fas fa-heart user__recipe__unlike"
-        onClick={() => unlikeRecipe(id, userId, recipes)}
-      />
       <div className="user__recipe__image">
         <img src={image} alt="recipe" />
       </div>
 
       <h5 className="user__recipe__title">{title}</h5>
+
       <Link to={`/recipe/${id}`} className="user__recipe__link">
         More...
       </Link>
+
+      <i
+        className="fas fa-heart user__recipe__unlike"
+        onClick={() => unlikeRecipe(id, userId, recipes)}
+      />
     </article>
   );
 };
