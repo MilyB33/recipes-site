@@ -1,3 +1,27 @@
+# Recipes Site
+
+## `About`
+
+Site on which you can search for recipes. It offers filtering, registering user and logging in using JSON Server hosted on heroku. After logging in you can add recipe to favourites. Authentication is provided by JWT
+
+## `Live Demo`
+
+Click here to go to [live demo](https://wizardly-elion-017ba2.netlify.app/)
+
+## `Used Apis`
+
+Spoonacular: [Spoonacular API](https://spoonacular.com/food-api)
+
+## `Used Technologies`
+
+- Javascript
+- ReactJS
+- React Router
+- Redux
+- CSS
+- SCSS
+- json-server, json-server-auth [Github](https://github.com/MilyB33/JSON_Server)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
