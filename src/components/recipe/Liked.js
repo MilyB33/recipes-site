@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { likeRecipe, unlikeRecipe } from '../../actions';
@@ -35,7 +35,7 @@ const Liked = ({
   };
 
   return (
-    <Fragment>
+    <>
       {likedRecipes.some(
         (likedRecipe) => likedRecipe.id === recipe.id
       ) ? (
@@ -51,7 +51,7 @@ const Liked = ({
           onClick={like}
         />
       )}
-    </Fragment>
+    </>
   );
 };
 

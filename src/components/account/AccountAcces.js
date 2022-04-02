@@ -1,29 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RegisterForm from './RegisterForm';
 import LogInForm from './LogInForm';
 
-class AccountAcces extends React.Component {
-  state = {
-    register: false,
+const AccountAccess = () => {
+  const [register, setRegister] = useState(false);
+
+  const onAccountChange = () => {
+    setRegister(!register);
   };
 
-  onAccountChange = () => {
-    this.setState((state) => {
-      return { register: !state.register };
-    });
-  };
+  return (
+    <main className="account">
+      {register ? (
+        <RegisterForm onVisibilityChange={onAccountChange} />
+      ) : (
+        <LogInForm onVisibilityChange={onAccountChange} />
+      )}
+    </main>
+  );
+};
 
-  render() {
-    return (
-      <main className="account">
-        {this.state.register ? (
-          <RegisterForm onVisibilityChange={this.onAccountChange} />
-        ) : (
-          <LogInForm onVisibilityChange={this.onAccountChange} />
-        )}
-      </main>
-    );
-  }
-}
-
-export default AccountAcces;
+export default AccountAccess;

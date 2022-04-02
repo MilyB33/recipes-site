@@ -68,7 +68,7 @@ class Navigation extends React.Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         <NavBtn onClick={this.toggleNav} />
 
         {this.state.visible && (
@@ -93,7 +93,7 @@ class Navigation extends React.Component {
             </ul>
           </nav>
         )}
-      </Fragment>
+      </>
     );
   }
 }

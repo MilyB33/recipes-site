@@ -3,20 +3,17 @@ import { cuisines } from '../../../static/data';
 import CategoryItem from './CategoryItem';
 
 const Category = () => {
-  const renderItems = () => {
-    return cuisines.map((cuisine) => {
-      return cuisine !== 'any' ? (
-        <CategoryItem name={cuisine} key={cuisine} />
-      ) : (
-        ''
-      );
-    });
-  };
-
   return (
     <section className="categories">
       <h1>Categories:</h1>
-      <ul className="categories__list">{renderItems()}</ul>
+      <ul className="categories__list">
+        {cuisines.map(
+          (cuisine) =>
+            cuisine !== 'any' && (
+              <CategoryItem name={cuisine} key={cuisine} />
+            )
+        )}
+      </ul>
     </section>
   );
 };

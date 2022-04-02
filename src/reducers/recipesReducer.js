@@ -2,6 +2,7 @@ import {
   FETCH_RECIPE,
   FETCH_RECIPES,
   START_LOADING,
+  END_LOADING,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -28,6 +29,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: true,
+      };
+    case END_LOADING:
+      return {
+        ...state,
+        loading: false,
       };
     default:
       return state;

@@ -467,7 +467,7 @@ input {
   left: 0;
   gap: 6em;
   align-items: center;
-  z-index: 1;
+  z-index: 100;
   background: #e9ecef;
   padding: 0.5rem;
   border-radius: 0 0 15px 15px;
@@ -598,20 +598,18 @@ input {
   border-radius: 15px;
   overflow: hidden;
   margin-top: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  backdrop-filter: blur(2px);
 }
 .slider__item {
-  height: 30vh;
+  max-height: 30vh;
 }
 @media (min-width: 500px) {
   .slider__item {
-    height: 50vh;
+    max-height: 50vh;
   }
 }
 @media (min-width: 800px) {
   .slider__item {
-    height: 80vh;
+    max-height: 80vh;
   }
 }
 

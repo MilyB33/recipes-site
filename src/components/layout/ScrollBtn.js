@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   restoreScroll,
   scrollFadeIn,
@@ -39,7 +39,7 @@ class ScrollBtn extends React.Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         {this.state.visible && (
           <div ref={this.ref}>
             <button className="scrollBtn" onClick={this.onClick}>
@@ -47,7 +47,7 @@ class ScrollBtn extends React.Component {
             </button>
           </div>
         )}
-      </Fragment>
+      </>
     );
   }
 }

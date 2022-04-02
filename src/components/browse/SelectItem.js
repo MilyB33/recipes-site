@@ -10,16 +10,6 @@ const SelectItem = ({
   id,
   onChange,
 }) => {
-  const renderOptions = () => {
-    return data.map((item) => {
-      return (
-        <option key={item} value={item} className="option--browse">
-          {item}
-        </option>
-      );
-    });
-  };
-
   return (
     <div className={`browse-form__box ${className ?? ''}`}>
       <label htmlFor={id}>{`${_.capitalize(text)}`}</label>
@@ -29,7 +19,11 @@ const SelectItem = ({
         className="input--browse"
         onChange={(e) => onChange(id, e.target.value)}
       >
-        {renderOptions()}
+        {data.map((item) => (
+          <option key={item} value={item} className="option--browse">
+            {item}
+          </option>
+        ))}
       </select>
     </div>
   );

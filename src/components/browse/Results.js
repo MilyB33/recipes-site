@@ -4,21 +4,19 @@ import { connect } from 'react-redux';
 import Recipe from './Recipe';
 import { BarLoader } from 'react-spinners';
 
-class Results extends React.Component {
-  renderRecipes = () => {
-    return this.props.recipes.map((recipe) => {
-      return <Recipe key={recipe.id} recipe={recipe} />;
-    });
-  };
-
-  render() {
-    return (
-      <section className="browse__results">
-        {this.props.loading ? <BarLoader /> : this.renderRecipes()}
-      </section>
-    );
-  }
-}
+const Results = ({ recipes, loading }) => {
+  return (
+    <section className="browse__results">
+      {loading ? (
+        <BarLoader />
+      ) : (
+        recipes.map((recipe) => (
+          <Recipe key={recipe.id} recipe={recipe} />
+        ))
+      )}
+    </section>
+  );
+};
 
 Results.propTypes = {
   recipes: PropTypes.array,

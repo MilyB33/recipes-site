@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchRecipes } from '../../actions';
@@ -10,112 +10,103 @@ import {
   intolerances,
 } from '../../static/data';
 
-class BrowseForm extends React.Component {
-  state = {
+const BrowseForm = ({ fetchRecipes, param }) => {
+  const [filters, setFilters] = useState({
     keyword: '',
     cuisine: '',
     mealType: '',
     diet: '',
     intolerances: '',
+  });
+
+  const getRecipes = (onLoadFilters) => {
+    fetchRecipes(onLoadFilters);
   };
 
-  componentDidMount() {
-    const param = this.props.param;
+  const onInputChange = (field, value) => {
+    setFilters({
+      ...filters,
+      [field]: value === 'any' ? '' : value,
+    });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    fetchRecipes(filters);
+  };
+
+  useEffect(() => {
+    const onLoadFilters = { ...filters }; // localy filters beacuse state changes when function is done
 
     if (mealTypes.includes(param)) {
-      this.setState({ mealType: param });
+      setFilters({ ...filters, mealType: param });
+      onLoadFilters.mealType = param;
     }
 
     if (cuisines.includes(param)) {
-      this.setState({ cuisine: param });
+      setFilters({ ...filters, cuisine: param });
+      onLoadFilters.cuisine = param;
     }
-  }
 
-  componentDidUpdate() {
-    this.getRecipes();
-  }
+    getRecipes(onLoadFilters);
 
-  getRecipes() {
-    if (this.props.recipes.length === 0) {
-      this.props.fetchRecipes(this.state);
-    }
-  }
+    // eslint-disable-next-line
+  }, []);
 
-  onInputChange = (field, value) => {
-    this.setState({ [field]: value === 'any' ? '' : value });
-  };
-
-  onSubmit = (e) => {
-    e.preventDefault();
-    this.props.fetchRecipes(this.state);
-  };
-
-  render() {
-    return (
-      <form className="browse-form" onSubmit={this.onSubmit}>
-        <div className="browse-form__box">
-          <label htmlFor="keyword">Keyword</label>
-          <input
-            className="input--browse"
-            type="text"
-            id="keyword"
-            placeholder="Keyword"
-            onChange={(e) =>
-              this.onInputChange('keyword', e.target.value)
-            }
-          />
-        </div>
-
-        <SelectItem
-          text="cuisine"
-          data={cuisines}
-          defaultValue={this.state.cuisine}
-          id="cuisine"
-          onChange={this.onInputChange}
-        />
-        <SelectItem
-          text="type"
-          data={mealTypes}
-          defaultValue={this.state.mealType}
-          id="mealType"
-          onChange={this.onInputChange}
-        />
-        <SelectItem
-          text="diet"
-          data={diets}
-          defaultValue={this.state.diet}
-          id="diet"
-          onChange={this.onInputChange}
-        />
-        <SelectItem
-          text="intolerances"
-          data={intolerances}
-          defaultValue={this.state.intolerances}
-          id="intolerances"
-          onChange={this.onInputChange}
-        />
-
+  return (
+    <form className="browse-form" onSubmit={onSubmit}>
+      <div className="browse-form__box">
+        <label htmlFor="keyword">Keyword</label>
         <input
-          type="submit"
-          value="Search"
-          className="button button--browse"
+          className="input--browse"
+          type="text"
+          id="keyword"
+          placeholder="Keyword"
+          onChange={(e) => onInputChange('keyword', e.target.value)}
         />
-      </form>
-    );
-  }
-}
+      </div>
+
+      <SelectItem
+        text="cuisine"
+        data={cuisines}
+        defaultValue={filters.cuisine}
+        id="cuisine"
+        onChange={onInputChange}
+      />
+      <SelectItem
+        text="type"
+        data={mealTypes}
+        defaultValue={filters.mealType}
+        id="mealType"
+        onChange={onInputChange}
+      />
+      <SelectItem
+        text="diet"
+        data={diets}
+        defaultValue={filters.diet}
+        id="diet"
+        onChange={onInputChange}
+      />
+      <SelectItem
+        text="intolerances"
+        data={intolerances}
+        defaultValue={filters.intolerances}
+        id="intolerances"
+        onChange={onInputChange}
+      />
+
+      <input
+        type="submit"
+        value="Search"
+        className="button button--browse"
+      />
+    </form>
+  );
+};
 
 BrowseForm.propTypes = {
-  recipes: PropTypes.array,
   fetchRecipes: PropTypes.func.isRequired,
+  param: PropTypes.string,
 };
 
-BrowseForm.defaultProps = {
-  recipes: [],
-};
-
-const mapStateToProps = (state) => {
-  return { recipes: state.recipes.recipes };
-};
-
-export default connect(mapStateToProps, { fetchRecipes })(BrowseForm);
+export default connect(null, { fetchRecipes })(BrowseForm);

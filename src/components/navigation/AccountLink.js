@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const AccountLink = ({ username, isAuthenticated }) => {
   return (
-    <Fragment>
+    <>
       {isAuthenticated && (
         <div className="user__link">
           <Link
@@ -16,7 +16,7 @@ const AccountLink = ({ username, isAuthenticated }) => {
           </Link>
         </div>
       )}
-    </Fragment>
+    </>
   );
 };
 

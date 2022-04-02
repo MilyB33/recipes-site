@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const ContactInfo = () => {
   return (
-    <Fragment>
+    <>
       <p className="contact__description">
         Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque
         penatibus et magnis dis parturient montes, nascetur ridiculus
@@ -32,7 +32,7 @@ const ContactInfo = () => {
           <p>b87yb3657fp@temporary-mail.net</p>
         </section>
       </section>
-    </Fragment>
+    </>
   );
 };
 

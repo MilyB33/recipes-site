@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { slideOnVisibility } from '../../../animations/animations';
+
 const MealCard = ({ url, type, className }) => {
   const ref = useRef(null);
 
